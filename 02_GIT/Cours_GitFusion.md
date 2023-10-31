@@ -46,4 +46,3 @@ git merge --abort
 
 (Cours manquant)
 
-git push
