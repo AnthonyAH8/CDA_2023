@@ -43,3 +43,7 @@ Si ces conflits ne sont pas voulus, **je peux annuler mon merge** grâce à l'op
 ```bash
 git merge --abort
 ```
+
+(Cours manquant)
+
+git push
