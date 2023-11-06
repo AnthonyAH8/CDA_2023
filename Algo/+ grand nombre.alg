@@ -2,10 +2,10 @@
 <Algo>
     <description texte="" courant="AFFICHER max"/>
     <extension extnom="inactif"/>
-    <fonction fctetat="inactif" fctcode=""/>
-    <F2 F2lignes="" F2etat="inactif" F2para="" F2defaut=""/>
+    <fonction fctcode="" fctetat="inactif"/>
+    <F2 F2etat="inactif" F2para="" F2defaut="" F2lignes=""/>
     <repere repcode="-10#10#-10#10#2#2" repetat="inactif"/>
-    <param epaisseurPoint="2" epaisseurLigne="2" maxBoucle="500000" totalBoucles="5000000" totalAffichages="1000" arrondiAuto="vrai" nbDecimales="8"/>
+    <param arrondiAuto="vrai" epaisseurPoint="2" epaisseurLigne="2" maxBoucle="500000" totalBoucles="5000000" totalAffichages="1000" nbDecimales="8"/>
     <item algoitem="FONCTIONS_UTILISEES" code="200#declarationfonctions"/>
     <item algoitem="VARIABLES" code="100#declarationsvariables">
         <item algoitem="max EST_DU_TYPE NOMBRE" code="1#NOMBRE#max"/>
@@ -17,7 +17,7 @@
             <item algoitem="DEBUT_POUR" code="13#debutpour"/>
             <item algoitem="AFFICHER &quot;Donner &quot;" code="4#Donner #0"/>
             <item algoitem="AFFICHER i" code="3#i#0#pasliste"/>
-            <item algoitem="AFFICHER &quot; nombres : &quot;" code="4# nombres : #0"/>
+            <item algoitem="AFFICHER &quot; nombre positif : &quot;" code="4# nombre positif : #0"/>
             <item algoitem="LIRE min" code="2#min#pasliste"/>
             <item algoitem="SI (min > max) ALORS" code="6#min > max">
                 <item algoitem="DEBUT_SI" code="7#debutsi"/>
