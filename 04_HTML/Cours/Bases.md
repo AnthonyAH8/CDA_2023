@@ -82,7 +82,7 @@ On évitera d'utiliser ces 3 balises, on préférera appliquer le style en CSS.
 <em>Met l'emphase sur une partie du texte (le navigateur appliquera de l'italique)</em>  
 
 <code>On peut entourer du code avec la balise code</code>
-<pre>La balise <pre> est similaire à <code> mais elle conserve la mise en forme du texte, y compris les espacements et les sauts de ligne. Cela peut être utile si on a un code HTML bien formaté qu'on souhaite afficher tel quel.</pre>.
+<pre>La balise <pre> est similaire à <code> mais elle conserve la mise en forme du texte, y compris les espacements et les sauts de ligne. Cela peut être utile si on a un code HTML bien formaté qu'on souhaite afficher tel quel.</pre>.</pre></code>
 
 ## Les liens et les ancres:
 
@@ -102,3 +102,75 @@ Les liens permettent aux utilisateurs de naviguer vers d'autres pages web, de t�
 2. `target` : Cet attribut détermine comment la page liée sera affichée  
     - `_blank`: Ouvre le lien dans une nouvelle fenêtre ou un nouvel onglet du navigateur.
     - `_self`: Ouvre le lien dans la même fenêtre ou onglet.
+
+### Les liens internes
+
+La balise `a` peut également être utilisée pour créer des liens internes à une même page, généralement pour permettre aux utilisateurs de sauter vers différentes parties de la page.  
+Pour cela, on va relier notre base `a` à un identifiant:
+
+```html
+    <a href="#section2"> Aller à la section 2</a>
+
+
+    <h2 id="section2">Section 2</h2>
+```
+
+### Autres utilisations
+
+1. **Téléchargememnt de fichiers**
+
+L'attribut `download` indique au navigateur que le lien doit être téléchargé au lieu d'être affiché
+
+```html
+    <a href="./mon-fichier.pdf"> Télécharger le fichier PDF</a>
+```
+
+2. **Liens pour courriel**
+
+Pour envoyer vers un courriel, on spécifie dans le chemin `mailto`
+
+```html
+    <a href="mailto:contact@example.com">Envoyer un email</a>
+```
+
+### Conseils:
+
+- Il faut s'assurer que les liens soient clairs et descriptifs pour les utilisateurs.
+- Bérifier que les URLS soient valides et fonctionnels.
+- Ajouter des attributs title pour fournir un texte alternatif (accessiblité) lorsque le texte du lien n'est pas suffisamment descriptif.
+
+La balise `a` est l'un des élements les plus importants pour la navigation et l'interaction dans une page web, elle offre de nombreuses possibilités por améliorer l'xp des utilisateurs
+
+
+## Types d'éléments et flux de page (display)
+
+En HTML, les éléments sont classés en 2 catégories principales : les éméments en ligne (inline elements) et les éléments de bloc (block-level elements). Ces catégories définissent comme les élements sont affichés et comment ils interagissent les uns avec les autres dans une page web. 
+
+1. **Elements de bloc (block-level elements)**
+
+    Les élements de bloc sont des éléments HTML qui créent des boîtes de contenu distinctes dans la page. Ils commencent sur une nouvelle ligne et s'étendent sur toute la largeur disponible de leur conteneur (sauf s'ils ont une largeur spécifiée ou définie en CSS).  
+    Les élements de bloc sont souvent utilisés pour structurer la mise en page d'une page web.
+    Par exemple, on a `div, p, h1, ul, li, table,...`.  
+    On peut appliquer des styles comme la largeur, la longueur, la hauteur, les marges et les rembourrages et les personnaliser.
+
+2. **Elements en ligne (inline elements)**
+
+    Les élements en ligne sont des éléments HTML qui ne commençent pas sur une nouvelle ligne et occupent uniquement l'espace nécessaire autour de leur contenu.  
+    Ils sont utilisés pour marquer du texte ou d'autres éléments au sein d'un paragraphe ou d'un élément de bloc.  
+    Les éléments en ligne n'ont généralement pas de largeur ou de hauteur spécifiée mais ils peuvent être stylisés en terme de coueleur, de police,...  
+    Les élements en ligne courants comprennent `span, a, strong, en, img, br,...`
+
+
+## Les listes
+
+En HTML, il existe 2 types de liste: les listes organisées (`<ol>`) et les listes non-organisées (`<ul>`).  
+Une fois la liste définie, on englobe chacun de ses élements indépendants autour d'une balise `<li>`.
+
+```html
+    <ul>
+        <li>Ceci est une liste non-organisée</li>
+    </ul>
+    <ol>
+        <li>Ceci est une liste organisée</li>
+    </ol>
+```
