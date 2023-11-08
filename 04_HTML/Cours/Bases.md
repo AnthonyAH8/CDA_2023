@@ -174,3 +174,14 @@ Une fois la liste définie, on englobe chacun de ses élements indépendants aut
         <li>Ceci est une liste organisée</li>
     </ol>
 ```
+
+## Les images `img`
+
+C'est une balse auto-fermante.
+
+Pour afficher une image, je dois indiquer à ma balise sa source via l'attribut `src`. Elle peut provenir du web ou être stockée en local dans l'ordianateur. Si l'image est stockée dans un ordinateur, le fichier devra être fourni durant l'hébergement du site si on souhaite que tout le monde puisse la consulter. Dans tous les cas, on préfère indiquer le chemin des images sous forme de chemin relatif.  
+On peut redimensionner les images grâce aux attributs width et height à laquelle il faudra donner une valeur en pixels. 
+
+Enfin, il faut mettre un attribut `alt` pour l'accessibilité dès qu'on utilise une balise image. C'est un texte qui va s'afficher si l'image n'arrive pas à s'afficher.Ce texte alternatif est aussi utile pour les personnes qui consultent le web depuis un lecteur audio.
+
+Au sein de notre répertoire, on préfèrera stocker nos images dans un dossier qui leur est dédié dans un dossier que l'on nommera img.
