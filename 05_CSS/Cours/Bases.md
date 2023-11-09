@@ -158,3 +158,22 @@ Si deux règles ont strictement la même importance et la même spécificité, l
 ```
 
 En comprennant ces 3 aspects de la priorité des styles, on peut résoudre plus facilement les conflits de style et garantir que les pages web s'affichent correctement. 
+
+### Les pseudos-classes
+
+Les pseudos-classes en CSS sont des sélecteurs spéciaux qui permettent de cibler les éléments HTML en fonction de leur état ou de leur position dabs la structure ou document. Elles sont précédées des deux points (`:`) dans les règles CSS.
+
+#### Les pseudos-classes de base
+
+1. **:hover**: Cette pseudo-classe permet de cibler un élément lorsque la souris le survole (ex: changement de couleur d'un lien lorsque la souris survole le lien).
+
+2. **:active**: Cette pseudo-classe cible un élément au moment où il est activé, généralement lorsque l'utilisateur clique dessus. On peut l'utiliser après un effet de clic visuel. 
+
+3. **:focus**: Cible un élément lorsqu'il obtient un focus, généralement après avoir été cliqué ou lors de la navigation au clavier. Il est couramment utilisé pour styliser les champs de formulaire lorsqu'ils sont sélectionnées.
+
+#### Les pseudos-classes de lien
+
+1. **:link**: Cible les liens non visités, les liens vers lesquels le l'utilisateur n'a pas encore navigué.
+
+2. **:visited**: Cible les liens déjà visités par l'utilisateur.
+
