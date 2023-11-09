@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+figcaption{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.card{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section{
+    text-align: center;
+    border: 1px solid black;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 3px;
+}
+
+div{
+    padding-top: 50px;
+    display: inline-block;
+}
+
+.button{
+    padding-bottom: 20px;
+}
+
+.number{
+    display: inline;
+}

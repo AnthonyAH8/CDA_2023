@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carte</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Paiement par carte bancaire
+        </h1>
+    </header>
+    <section class="card">
+        <form action="#" method="post">
+            <figcaption>Paiement par Carte Bancaire</figcaption>
+            <div>
+                <label for="number">Numéro de Carte : </label>
+                <input type="text" name="name" id="number">
+            </div>
+            <div>
+                <label for="name">Nom du titulaire:</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="number">
+                <div>
+                    <label for="number">Date d'expiration :</label>
+                    <input type='number' name="number" min="1" max="10" step="1" id="number">
+                </div>
+                <div>
+                    <label for="number">CVV :</label>
+                    <input type='number' name="number" min="1" max="3" step="1" id="number">
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Payer" name="button">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+
+<body>
+    <h2>Me contacter</h2>
+    <hr>
+    <form action="#" method="POST">
+        <label for="name">Nom :</label>
+        <input type="text" name="name" id="name" required>
+        <div>
+            <label for="email">Email :</label>
+            <input type='email' name="email" id="email" required>
+        </div>
+        <div>
+            <label for="phone">Téléphone :</label>
+            <input type="tel" name="phone" id="phone" required>
+        </div>
+        <div>
+            <label for="textarea">Message :</label>
+            <textarea name="textarea" id="textarea" cols="20" rows="5"></textarea>
+        </div>
+        <div>
+            <label for="gender">Genre :</label>
+            <input type="radio" name="gender" value="male">Homme
+            <input type="radio" name="gender" value="female">Femme
+            <input type="radio" name="gender" value="other">Autre
+        </div>
+        <div>
+            <label for="interet">Intérêts :</label>
+            <input type="checkbox" name="web" value="web" id="interet">Développement web
+            <input type="checkbox" name="mobil" value="mobile" id="interet">Développement mobile
+        </div>
+        <div>
+
+            <label for="country">Pays :</label>
+            <select name="pays" id="pays">
+                <option value="france">France</option>
+                <option value="germany">Allemagne</option>
+                <option value="belgium">Belgique</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Envoyer" name="button">
+        </div>
+    </form>
+    <hr>
+    <a href="exo2.html"><button type="submit">Retour</button></a>
+</body>
+
+</html>
