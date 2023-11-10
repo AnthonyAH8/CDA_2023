@@ -165,11 +165,11 @@ Les pseudos-classes en CSS sont des sélecteurs spéciaux qui permettent de cibl
 
 #### Les pseudos-classes de base
 
-1. **:hover**: Cette pseudo-classe permet de cibler un élément lorsque la souris le survole (ex: changement de couleur d'un lien lorsque la souris survole le lien).
+1. **:hover** : Cette pseudo-classe permet de cibler un élément lorsque la souris le survole (ex: changement de couleur d'un lien lorsque la souris survole le lien).
 
-2. **:active**: Cette pseudo-classe cible un élément au moment où il est activé, généralement lorsque l'utilisateur clique dessus. On peut l'utiliser après un effet de clic visuel. 
+2. **:active** : Cette pseudo-classe cible un élément au moment où il est activé, généralement lorsque l'utilisateur clique dessus. On peut l'utiliser après un effet de clic visuel. 
 
-3. **:focus**: Cible un élément lorsqu'il obtient un focus, généralement après avoir été cliqué ou lors de la navigation au clavier. Il est couramment utilisé pour styliser les champs de formulaire lorsqu'ils sont sélectionnées.
+3. **:focus** : Cible un élément lorsqu'il obtient un focus, généralement après avoir été cliqué ou lors de la navigation au clavier. Il est couramment utilisé pour styliser les champs de formulaire lorsqu'ils sont sélectionnées.
 
 #### Les pseudos-classes de lien
 
@@ -177,3 +177,18 @@ Les pseudos-classes en CSS sont des sélecteurs spéciaux qui permettent de cibl
 
 2. **:visited**: Cible les liens déjà visités par l'utilisateur.
 
+### Les pseudo-classes de position
+
+1. **:first-child** : On va cibler le premier élément enfant par rapport à un parent. On ppeut l'utiliser pour ajouter des styles spéciaux au premier élement d'une liste par exemple. 
+
+2. **:last-child** : Utilise le dernier élément enfant d'un parent. 
+
+3. **: nth-child(*n*)** : On va mettre l'enfant qu'on va cibler en fonction de sa position définie entre parenthèses. On peut utiliser des formules comme `nth-child(odd)` ou `nth-child(even)`.
+
+### Les pseudo-classes de formulaires
+
+1. **:checked** : Cible les élements d'entrée (comme les cases à cocher ou les boutons radio) qui sont cochés ou sélectionnés.
+
+2. **:disabled** : Cible les éléments d'entrée qui sont désactivés.
+
+## 
