@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif
+}
+
+.image{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 8px 0px;
+    border-radius: 0.8rem;
+    padding-bottom: 10px;
+}
+
+article{
+    background-color: #fafaf9;
+    width: 22vw;
+    height: 45vh;
+    padding: 10px;
+    box-shadow: 1px 1px 2px 5px #6c727f;
+    border-radius: 0.8em;
+    margin-left: 40%;
+    margin-top: 20%;
+}
+
+p{
+    padding-top: 8px;
+    color: #6c727f;
+}
+
+span{
+    padding: 5px 15px;
+    border-radius: 0.8rem;
+    background-color: #e6d6fc;
+    color: #883ae1;
+    font-size: 0.7em;
+    font-weight: 800;
+}
+
+h3{
+    margin-top: 25px;
+    font-weight: 900;
+}
+
+div p:last-child{
+    font-size: 0.8em;
+    padding-top: 30px;
+    font-weight: 300;
+}
