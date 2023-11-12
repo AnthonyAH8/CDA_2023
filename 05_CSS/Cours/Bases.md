@@ -198,7 +198,7 @@ Le CSS offre un large éventail de propriétés pour contrôler l'apparence et l
 
 ### Les propriétés de texte
 
-1. **`font-family` :** Cette propriété permet de spéciafier la faimille de police utilisées pour afficher du texte dans un élément HTML. Elle peut être définie avec une liste de nom de police, séparés par des virgules, pour spécifier des alternatives en cas d'indisponibilité de la première police.
+1. **`font-family` :** Cette propriété permet de spécifier la famille de police utilisées pour afficher du texte dans un élément HTML. Elle peut être définie avec une liste de nom de police, séparés par des virgules, pour spécifier des alternatives en cas d'indisponibilité de la première police.
 
 2. **`font-size`**: Cette propriété détermine la taille de la police utilisée pour le texte à l'intérieur d'un élément. Elle peut être définie en pixels (px), points (pt), en pourcentage (%), ou d'autres unités de mesures (em, rem).
 
@@ -250,13 +250,13 @@ C'est l'espace autour de la bordure de l'élément, qui sépare cet élément de
 
 5. **Largeur totale (total width)**:
 
-C'est la taille totale de l'élément qui compren le contenu, le rembourrage, la bordure et la marge. Elle est calculée en cumulant la largeur de l'ensemble des éléments. 
+C'est la taille totale de l'élément qui comprend le contenu, le rembourrage, la bordure et la marge. Elle est calculée en cumulant la largeur de l'ensemble des éléments. 
 
 6. **Autres proriétés**:
 
 - `box-sizing`: Elle permet de définir comment la largeur et la hauteur de l'élément sont calculés. La valeur par défaut est "content-box", ce qui signifie que la largeur et la hauteur ne tiennent compte que du contenu, excluant la padding et la bordure. On peut à la place utiliser "border-box" pour que la largeur et la hauteur tiennent compte du padding et de la bordure. 
 - `outline`: Définit un contour autour de l'élément. Contrairement à la bordure, l'outline n'affecte pas la mise en page et ne prend pas d'espace supplémentaire. 
-- `box-shadox`: Ajoute une ombre à l'élement, créant un effet de profondeur ou de miseen évidence. 
+- `box-shadox`: Ajoute une ombre à l'élement, créant un effet de profondeur ou de mise en évidence. 
 
 Le box model est essentiel pur comprendre comment les éléments HTML sont dimensionnés et espacés les uns par rapport aux autres sur une page web. 
 
