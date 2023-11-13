@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #2194ff;
+    color: #fff;
+}
+
+header{
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+    line-height: 3em;
+}
+
+nav a{
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+img{
+    border-radius: 10px;
+    display: block;
+    margin-left: 35%;
+}
+
+section p{
+    margin-top: 20px;
+}
+
+table th{
+    background-color: blue;
+
+}
+
+table{
+    margin-left: 38%;
+    border: 5px solid #0000ff;
+    border-radius: 5px;
+    background-color: blue;
+}
+
+td{
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    padding: 8px;
+}
+
+td:first-child{
+    background-color: #0000ff;
+    color: #fff;
+}

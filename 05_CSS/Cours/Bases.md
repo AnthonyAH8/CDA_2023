@@ -309,4 +309,5 @@ L'élément devient un conteneur flexible, permettant de créer des mises en pag
 L'élément devient un conteneur de grille, permettant de créer des mise en page basées sur une grille en utilisant des propriétés associées.
 
 
-Ces valeurs de la prorpiétés display sont essentielles pour contrôler la mise en page et la présentation des éléments HTML dans une page web, en leur donnant différents comportements de rendu en fonction des besoins de conception.  
+Ces valeurs de la prorpiétés display sont essentielles pour contrôler la mise en page et la présentation des éléments HTML dans une page web, en leur donnant différents comportements de rendu en fonction des besoins de conception.
+
