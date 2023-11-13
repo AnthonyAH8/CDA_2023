@@ -36,41 +36,44 @@
                 </div>
                 <div>
                     <label for="gender">Sexe : </label>
-                    <input type="radio" name="homme" id="gender"> Homme
-                    <input type="radio" name="femme" id="gender"> Femme
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend> Sujet de votre question </legend>
-            <div>
-                <label for="urgence">Est-ce urgent ? </label>
-                <input type="checkbox" name="urgence" id="urgence">
-            </div>
-            <div>
-                <label for="probleme">Type de problème :</label>
-                <select name="probleme" id="probleme">
-                    <optgroup label="Compte">
-                        <option>Je n'arrive pas à accèder à mon compte</option>
-                        <option>Je crois que j'ai été piraté</option>
-                        <option>Je n'arrive pas à changer mon mot de passe</option>
-                        <option>J'ai perdu mes identifiants</option>
-                    </optgroup>
-                    <optgroup label="Achat">
-                        <option>Je n'arrive pas à confirmer mon achat</option>
-                        <option>J'aimerai avoir des nouvelles de mon achat</option>
-                    </optgroup>
-                </select>
-            </div>
-        </fieldset>
-        <fieldset>
-            <div>
-                <p>Notes :</p>
-                <textarea name="notes" id="notes" cols="80" rows="10"></textarea>
-            </div>
-        </fieldset>
-        <a><button>Envoyer ma question</button></a>
-    </form>
-</div>
+                    <input type="radio" name="gender" value="homme">
+                    <label for="gender">Homme</label>
+                    <input type="radio" name="gender" value="femme">
+                    <label for="gender">Femme</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend> Sujet de votre question </legend>
+                <div>
+                    <label for="urgence">Est-ce urgent ? </label>
+                    <input type="checkbox" name="urgence" id="urgence">
+                </div>
+                <div>
+                    <label for="probleme">Type de problème :</label>
+                    <select name="probleme" id="probleme">
+                        <optgroup label="Compte">
+                            <option>Je n'arrive pas à accèder à mon compte</option>
+                            <option>Je crois que j'ai été piraté</option>
+                            <option>Je n'arrive pas à changer mon mot de passe</option>
+                            <option>J'ai perdu mes identifiants</option>
+                        </optgroup>
+                        <optgroup label="Achat">
+                            <option>Je n'arrive pas à confirmer mon achat</option>
+                            <option>J'aimerai avoir des nouvelles de mon achat</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div>
+                    <p>Notes :</p>
+                    <label for="notes"></label>
+                    <textarea name="notes" id="notes" cols="80" rows="10"></textarea>
+                </div>
+            </fieldset>
+            <button type="submit">Envoyer ma question</button>
+        </form>
+    </div>
 </body>
 
 </html>

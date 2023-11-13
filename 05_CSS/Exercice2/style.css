@@ -36,10 +36,10 @@ table th{
 }
 
 table{
-    margin-left: 38%;
-    border: 5px solid #0000ff;
+    margin:auto;
     border-radius: 5px;
     background-color: #0000ff;
+    overflow: hidden;
 }
 
 td{
