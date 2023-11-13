@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+</head>
+
+<body>
+    <header>
+        <h1>John Doe</h1>
+        <h2>Contact</h2>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="horaires.html">Horaires</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <form action="post" class="formulaire">
+            <fieldset>
+                <legend> Qui êtes vous? </legend>
+                <div>
+                    <label for="name">Nom : </label>
+                    <input type="text" name="name" id="name" placeholder="Nom">
+                </div>
+                <div>
+                    <label for="firstname">Prénom : </label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Prénom">
+                </div>
+                <div>
+                    <label for="dob">Date de naissance : </label>
+                    <input type="date" name="dob" id="dob" lang="fr-FR">
+                </div>
+                <div>
+                    <label for="gender">Sexe : </label>
+                    <input type="radio" name="homme" id="gender"> Homme
+                    <input type="radio" name="femme" id="gender"> Femme
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend> Sujet de votre question </legend>
+            <div>
+                <label for="urgence">Est-ce urgent ? </label>
+                <input type="checkbox" name="urgence" id="urgence">
+            </div>
+            <div>
+                <label for="probleme">Type de problème :</label>
+                <select name="probleme" id="probleme">
+                    <optgroup label="Compte">
+                        <option>Je n'arrive pas à accèder à mon compte</option>
+                        <option>Je crois que j'ai été piraté</option>
+                        <option>Je n'arrive pas à changer mon mot de passe</option>
+                        <option>J'ai perdu mes identifiants</option>
+                    </optgroup>
+                    <optgroup label="Achat">
+                        <option>Je n'arrive pas à confirmer mon achat</option>
+                        <option>J'aimerai avoir des nouvelles de mon achat</option>
+                    </optgroup>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div>
+                <p>Notes :</p>
+                <textarea name="notes" id="notes" cols="80" rows="10"></textarea>
+            </div>
+        </fieldset>
+        <a><button>Envoyer ma question</button></a>
+    </form>
+</div>
+</body>
+
+</html>
