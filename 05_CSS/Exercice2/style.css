@@ -2,6 +2,7 @@
     box-sizing: border-box;
     background-color: #1e90ff;
     color: #fff;
+    font-family: 'Sora', sans-serif
 }
 
 header{
@@ -74,18 +75,22 @@ button{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-left: 77%;
+    margin-left: 79%;
     background-color: #0000ff;
     padding: 10px 5px;
     border-radius: 20px;
     color: #fff;
     border: #0000ff;
+    font-weight: bolder;
+    opacity: 0.5;
 }
 
 textarea{
     background-color: #fff;
     margin: 5px;
     border-radius: 10px;
+    width: 100%;
+    resize: none;
 }
 
 .container{
@@ -96,4 +101,9 @@ textarea{
 
 legend{
     padding: 10px 5px;
+}
+
+.float::first-letter{
+    font-size: 2em;
+    float:left;
 }
