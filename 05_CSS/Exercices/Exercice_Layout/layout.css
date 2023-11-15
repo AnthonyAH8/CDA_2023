@@ -45,5 +45,29 @@ footer{
 
 footer p{
     color: rgb(255, 255, 255, 1);
-    font-size: 2em;
+    font-size: 1.5em;
+}
+
+@media only screen and (min-width: 300px) and (max-width:991px) {
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container div:nth-child(2){
+        background-color: blue;
+        width: 100%;
+    }
+    
+    .container div:first-child{
+        background-color: red;
+        width: 100%;
+    }
+    
+    .container div:last-child{
+        background-color: yellow;
+        width: 100%;
+    }
 }
