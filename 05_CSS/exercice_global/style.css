@@ -68,12 +68,13 @@ p{
 footer {
     background-color: #1e90ff;
     height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: centerl;
 
 }
 footer p{
-    text-align: center;
     color: #fff;
-    padding-top: 40px;
 }
 
 @media only screen and (max-width:992px) {
