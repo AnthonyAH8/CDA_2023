@@ -11,22 +11,78 @@
 </head>
 
 <body>
+    <div class="container.fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid bg-dark p-1">
+                <a class="navbar-brand text-white" href="#">
+                    <i class="bi bi-brightness-high"></i>eLibrary</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-white-50" href="#">Educatifs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-white-50" href="#">Romans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-white-50" href="#">Comics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled text-white-50" aria-disabled="true">Magazines</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white-50" aria-current="page" href="authors.html">Liste des
+                                auteurs</a>
+                        </li>
+                        <ul>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white-50" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-lightbulb"></i>Gestion
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Contact</a></li>
+                                    <li><a class="dropdown-item" href="#">CGU</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">A propos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 text-primary" type="search"
+                            placeholder="Titre, Date, Auteur,..." aria-label="Search">
+                        <button class="btn btn-outline-light text-white" type="submit">Rechercher</button>
+                    </form>
+                </div>
+            </div>
+    </div>
     <div class="container">
-        <h1 class="text-center text-black-50 p-5">- Liste des Auteurs - </h1>
-        <table class="table">
-            <thead class="bg-black">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Photo</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Date de naissance</th>
-                    <th scope="col">Ouvrages</th>
-                    <th scope="col">Actions</th>
+        <h1 class="text-start text-black-50 p-2">- Liste des Auteurs - </h1>
+        <table class="table text-justify border border-secondary rounded-4">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col" class="bg-dark text-white">#</th>
+                    <th scope="col" class="bg-dark text-white">Photo</th>
+                    <th scope="col" class="bg-dark text-white">Nom</th>
+                    <th scope="col" class="bg-dark text-white">Date de naissance</th>
+                    <th scope="col" class="bg-dark text-white">Ouvrages</th>
+                    <th scope="col" class="bg-dark text-white">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
+                    <td>Photo</td>
                     <td>Stephen King</td>
                     <td>21 septembre 1947</td>
                     <td>
@@ -36,37 +92,100 @@
                             <li>The green Mile (1996)</li>
                         </ul>
                     </td>
-                    <td class="align-center">
-                        <button class="">Détails</button>
-                        <button>Editer</button>
-                        <button>Supprimer</button>
+                    <td class="align-center g-2">
+                        <button type="button" class="btn btn-outline-primary">Détails</button>
+                        <button type="button" class="btn btn-outline-secondary">Editer</button>
+                        <button type="button" class="btn btn-outline-danger">Supprimer</button>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>Photo</td>
+                    <td>J.K Rowling</td>
+                    <td>31 juillet 1965</td>
+                    <td>
+                        <ul>
+                            <li>Harry Potter and the Philosopher's Stone (1997)</li>
+                            <li>The Cuckoo's Calling (2013)</li>
+                            <li>Lethal White (2019)</li>
+                        </ul>
+                    </td>
+                    <td class="align-center g-2">
+                        <button type="button" class="btn btn-outline-primary">Détails</button>
+                        <button type="button" class="btn btn-outline-secondary">Editer</button>
+                        <button type="button" class="btn btn-outline-danger">Supprimer</button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <td>Photo</td>
+                    <td>Will Eisner</td>
+                    <td>6 Mars 1917</td>
+                    <td>
+                        <ul>
+                            <li>Sheena, Queen of the Jungle (1937)</li>
+                            <li>The Spirit (1940)</li>
+                        </ul>
+                    </td>
+                    <td class="align-center g-2">
+                        <button type="button" class="btn btn-outline-primary">Détails</button>
+                        <button type="button" class="btn btn-outline-secondary">Editer</button>
+                        <button type="button" class="btn btn-outline-danger">Supprimer</button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <td>Photo</td>
+                    <td>Franck Thilliez</td>
+                    <td>6 Mars 1917</td>
+                    <td>
+                        <ul>
+                            <li>La Mémoire Fantôme (2007)</li>
+                            <li>Angor (2017)</li>
+                            <li>Luca (2019)</li>
+                        </ul>
+                    </td>
+                    <td class="align-center g-2">
+                        <button type="button" class="btn btn-outline-primary">Détails</button>
+                        <button type="button" class="btn btn-outline-secondary">Editer</button>
+                        <button type="button" class="btn btn-outline-danger">Supprimer</button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <td>Photo</td>
+                    <td>Emile Zola</td>
+                    <td>2 Avril 1840</td>
+                    <td>
+                        <ul>
+                            <li>Mon Salon (1840)</li>
+                            <li>Thérèse Raquin (1867)</li>
+                            <li>Les Soirées de Médan (1880)</li>
+                        </ul>
+                    </td>
+                    <td class="align-center g-2">
+                        <button type="button" class="btn btn-outline-primary">Détails</button>
+                        <button type="button" class="btn btn-outline-secondary">Editer</button>
+                        <button type="button" class="btn btn-outline-danger">Supprimer</button>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">6</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <td>Photo</td>
+                    <td>Victor Hugo</td>
+                    <td>26 Février 1802</td>
+                    <td>
+                        <ul>
+                            <li>Le dernier jour d'un condamné (1829)</li>
+                            <li>Les Contemplations (1856)</li>
+                            <li>Les Misérables (1862)</li>
+                        </ul>
+                    </td>
+                    <td class="align-center g-2">
+                        <button type="button" class="btn btn-outline-primary">Détails</button>
+                        <button type="button" class="btn btn-outline-secondary">Editer</button>
+                        <button type="button" class="btn btn-outline-danger">Supprimer</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
