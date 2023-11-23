@@ -318,13 +318,44 @@
 // console.log(tab[2])
 // console.table(tab)
 
+
+// # Exercice 21
+
+// - Vous devez créer un tableau qui contiendra 10 valeurs.
+// - Faites en sorte que l’utilisateur puisse saisir les 10 valeurs afin de les stocker dans le tableau.
+// - Enfin procédez à l’itération de son contenu afin de l’afficher dans la console
+// - Effectuer l’affichage des résultats dans la console comme indiqué dans l'exemple ci-dessous.
+// - Pour aller plus loin créez une fonction permettant de le remplir automatiquement avec des nombres aléatoires
+
 let tab = []
+let space = `\n`
 
 function tableau(number){
+    tab = Number(prompt("Saisir 10 chiffres :"))
     for (let i = 0; i < 10; i++) {
-        tab[i] = prompt("Saisir 10 chiffres :")
-        
+        number+=
     }
 }
-
+for (let j = 0; j < 10; j++) {
+    space.repeat()* 10;
+}
 console.log(tab)
+
+// # Exercice 22
+// - Demander à l’utilisateur le nombre de chiffre que comportera un tableau
+// - Le programme générera aléatoirement des nombres entre 1 et 50 pour remplir les cellules de ce tableau.
+// - Enfin votre programme vérifiera s’ils sont pair ou impair puis les affichera sous cette forme :
+// ```
+// Le nombre 30 est   pair.
+// Le nombre 31 est impair.
+// Le nombre  5 est impair.
+// Le nombre 12 est   pair.
+// ```
+
+// # Exercice 23
+
+//   - Via l'utilisation d'une variable de type <b>tableau</b>, vous devrez réaliser un logiciel permettant à l'utilisateur d'entrer une <b>série de notes</b>, dont le nombre possible à entrer sera soit (au choix de l'utilisateur) :
+//     - saisie avant la saisie de notes
+//     - permissif et pourra aller jusqu'à entrer une note négative qui stoppera la saisie des notes.
+//   - Une fois la <b>saisie des notes terminée</b>, l'utilisateur aura à sa disposition un <b>affichage</b> lui permettant d'avoir la <b>note max</b>, la <b>note min</b> ainsi que la <b>moyenne</b> (possible de faire un menu pour choisir)
+//   - Pour les menus à choix, l'utilisation d'un switch est conseillée
