@@ -327,19 +327,29 @@
 // - Effectuer l’affichage des résultats dans la console comme indiqué dans l'exemple ci-dessous.
 // - Pour aller plus loin créez une fonction permettant de le remplir automatiquement avec des nombres aléatoires
 
-let tab = []
-let space = `\n`
 
-function tableau(number){
-    tab = Number(prompt("Saisir 10 chiffres :"))
-    for (let i = 0; i < 10; i++) {
-        number+=
-    }
-}
-for (let j = 0; j < 10; j++) {
-    space.repeat()* 10;
-}
-console.log(tab)
+// let tableau = [];
+
+
+// for (let i = 0; i < 10; i++) {
+//   let numberTableau = Number(prompt("Veuillez saisir des chiffres entre 1 et 100 :"));
+//   numberTableau = Number(numberTableau);
+//   if (isNaN(numberTableau)) {
+//     alert("Valeur invalide, veuillez réessayer.");
+//   } else {
+//     tableau.push(numberTableau);
+//   }
+// }
+// for (let i = 0; i < tableau.length; i++) {
+//   console.table(tableau[i]);
+// }
+
+// function remplirTableau() {
+//     let number = Math.floor(Math.random() * 100);
+//     tableau.push(number);
+//   }
+
+// --------------------------------------------------------------
 
 // # Exercice 22
 // - Demander à l’utilisateur le nombre de chiffre que comportera un tableau
@@ -352,6 +362,25 @@ console.log(tab)
 // Le nombre 12 est   pair.
 // ```
 
+// let choix = prompt("Saisir un nombre inférieur à 50 :");
+
+// let tableau = [];
+
+// for (let i = 0; i < choix; i++) {
+//   let nombre = Math.floor(Math.random() * 50) + 1;
+//   tableau.push(nombre);
+// }
+
+// for (let nombre of tableau) {
+//   if (nombre % 2 == 0) {
+//     console.log(`Le nombre ${nombre} est impair`);
+//   } else {
+//     console.log(`Le nombre ${nombre} est pair`);
+//   }
+// }
+
+// --------------------------------------------
+
 // # Exercice 23
 
 //   - Via l'utilisation d'une variable de type <b>tableau</b>, vous devrez réaliser un logiciel permettant à l'utilisateur d'entrer une <b>série de notes</b>, dont le nombre possible à entrer sera soit (au choix de l'utilisateur) :
@@ -359,3 +388,37 @@ console.log(tab)
 //     - permissif et pourra aller jusqu'à entrer une note négative qui stoppera la saisie des notes.
 //   - Une fois la <b>saisie des notes terminée</b>, l'utilisateur aura à sa disposition un <b>affichage</b> lui permettant d'avoir la <b>note max</b>, la <b>note min</b> ainsi que la <b>moyenne</b> (possible de faire un menu pour choisir)
 //   - Pour les menus à choix, l'utilisation d'un switch est conseillée
+
+let notes = [];
+
+let nbNotes = Number(prompt("Saisir un nombre de notes à entrer :"));
+let maxNotes = 0;
+let minNotes = 20;
+let moyenne = 0;
+
+for (let i = 0; i < nbNotes; i++) {
+    let note = Number(prompt("Saisir des notes entre 0 et 20 :"))
+    if (note < 0) {
+        alert("Mauvaise saisie")
+    } else if(note >= 0 && note <= 20){
+        notes.push(note)
+    }else{
+        alert("Mauvaise saisie, veuillez réessayer")
+    }
+    if(note > maxNotes){
+        maxNotes = note
+    }
+    if(note < minNotes){
+        minNotes = note
+    }
+
+    let somme = 0
+    somme += notes[i]
+    moyenne /= notes.length
+    
+}
+console.log(`La plus grande note est ${maxNotes}`);
+console.log(`La plus petite note est ${minNotes}`);
+console.log(`La moyenne des notes est de ${moyenne}`);
+console.table(notes);
+
