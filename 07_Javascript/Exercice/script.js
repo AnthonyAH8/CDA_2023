@@ -16,3 +16,315 @@
 // result = nb1 + nb2
 // console.log(`Le résultat de ${nb1} + ${nb2} = ${result}`)
 // alert(`Le résultat de ${nb1} + ${nb2} = ${result}`)
+
+// ------------------------------------------ (Number = Transtypage (cast))
+
+// let hauteur, rayon, pi, volume;
+
+// rayon = parseFloat(prompt("Veuillez saisir un rayon:"));
+// hauteur = parseFloat(prompt("Veuillez saisir une hauteur:"));
+// volume = ((Math.PI * (rayon ** 2) * hauteur) / 3).toFixed(3);
+
+// alert(`Le volume d'un cone droit avec le rayon ${rayon} et la hauteur ${hauteur} est de ${volume} cm³`); (chaine interpolée)
+
+// -----------------------------------------------
+
+// alert(((Math.PI * Number(prompt("Veuillez saisir un rayon:")) ** 2) * Number(prompt("Veuillez saisir une hauteur:")) / 3 ).toFixed(3));
+
+// -----------------------------------------------
+
+// let age;
+
+// age = Number(prompt("Veuillez saisir votre âge"));
+// alert((age >= 18));
+
+// ---------------------------------------------------
+
+
+// let temp;
+
+// temp = Number(prompt("Veuillez entrer une température de l'eau"));
+// if (temp < 0) {
+//     console.log("L'eau est à l'état solide")
+// } else if(temp >=0 && temp <=100){
+//     console.log("L'eau est à l'état liquide")
+// } else{
+//     console.log("L'eau est à l'état gazeux")
+// }
+
+// console.log(temp > 100 ? "L'eau est à l'état gazeux" : (temp < 0 ? "L'eau est à l'état solide" : "L'eau est à l'état liquide"));
+
+// -----------------------------------------------------
+
+// let age, salaire, experience
+
+// age = Number(prompt("Age : "));
+// salaire = Number(prompt("Salaire demandé : "));
+// experience = Number(prompt("Années d'experience :"));
+
+// if(age < 30) {
+//     alert("Trop jeune! Minimum 30 ans");
+// } else if (experience < 5) {
+//     alert("Pas assez d'expérience! 5 ans d'expérience minimum");
+// } else if(salaire >= 40000){
+//     alert("Salaire demandé trop élevé! 40000 euros net max");
+// } else{
+//     alert("Candidature valable !");
+// }
+
+// ----------------------------------------------------------
+
+
+// let random = Math.floor((Math.random() * 100));
+// console.log(random);
+
+// let reponse;
+
+// do{
+//     reponse = Number(prompt("Saisir un nombre entre 0 et 100"))
+// }while (reponse !== random);
+
+// ---------------------------------------------------------------
+
+// for(let number = 0; number < 10; number++){
+//     if(number === 0){
+//         console.log("Je commence à compter")
+//     };
+//     console.log(number)
+// }
+// console.log("Fin du compte !")
+
+// let nb = 0;
+
+// while(nb < 10){
+//     console.log(nb);
+//     nb++;
+// }
+
+// ------------------------------------------------------------
+
+// for( let matiere = 1; matiere < 4; matiere++){
+//     console.log(`Chapitre ${matiere}`)
+//     for( let chapter = 1; chapter < 4; chapter++){
+//         console.log(`Partie ${matiere}.${chapter}`)
+//     }
+// }
+
+// ----------------------------------------------------------------
+
+// let pipe = "|";
+// let tiret = "-";
+// let resultat = "";
+// let number;
+
+// for(number = 1; number <= 10; number++){
+//     console.log(`\nTable de ${number} :`)
+//     for( let number2 = 1; number2 <= 10; number2++){
+//         console.log(`${number} X ${number2} =  ${number2 * number}`);
+//     }
+// }
+
+// --------------------------------------------------------------------(tableau)
+
+// console.log(`${pipe} 1 ${pipe} 2 ${pipe} 3 ${pipe} 4 ${pipe} 5 ${pipe} 6 ${pipe} 7 ${pipe} 8 ${pipe} 9 ${pipe} 10`);
+// console.log(`--------------------------------------------`);
+// for ( let i = 1; i <= 10; i++) {
+//     for( let j= 1 ; j <= 10; j++){
+//         resultat += `${j  * i} \t`
+//     }
+//     resultat += `\n`
+// }
+// console.log(resultat);
+
+
+// console.log(`${pipe} 1 ${pipe} 2 ${pipe} 3 ${pipe} 4 ${pipe} 5 ${pipe} 6 ${pipe} 7 ${pipe} 8 ${pipe} 9 ${pipe} 10`);
+// console.log(`--------------------------------------------`);
+// for (number = 1; number <= 10; number++) {
+//     console.log(`${pipe} ${1*number}${pipe} ${2*number}${pipe} ${3*number}${pipe} ${4*number}${pipe} ${5*number}${pipe} ${6*number}${pipe} ${7*number}${pipe} ${8*number}${pipe} ${9*number}${pipe} ${10*number}${pipe}`);
+//     console.log(`----------------------------------------`);
+// }
+
+// let nbLignes = parseInt(prompt("Entrez la hauteur du triangle"));
+
+// let etoiles = "*";
+// let espaces = " ";
+// let nbEspaces = nbLignes - 1;
+// for (let ligne = 1; ligne <= nbLignes; ligne++) {   
+//     console.log(`${espaces.repeat(nbEspaces)}${etoiles}`);
+//     etoiles += "**";     
+//     nbEspaces --;
+// }
+
+
+// ---------------------------------------------------------------
+
+// let epaisseur = 0.0001;
+// let compteur = 0;
+// do{ 
+//    epaisseur*=2
+//    compteur++
+// } while(epaisseur < 400)
+// console.log(compteur)
+
+// let epaisseurMax = 400;
+// let count = 0;
+// do{ 
+//     epaisseurMax/=2
+//     count++
+//  } while(epaisseurMax > 0.0001)
+//  console.log(compteur)
+
+// --------------------------------------------------------------------
+
+// let population = Number(prompt("Nombre d'habitants :"));
+// let taux = Number(prompt("Pourcentage d'accroissement :"));
+// let populationGoal = Number(prompt("Nombre d'habitants visé :"));
+// let nombre = 0;
+// taux = 1 + (taux / 100);
+
+// while(population <= populationGoal){
+//     population = taux * population
+//     nombre++;
+// }
+// console.log(`La population initiale dépasse la population visée à partir de l'année ${nombre} avec un taux de ${taux}%.`);
+
+
+// -------------------------------------------------------------------------------
+
+// let number = parseInt(prompt("Saisir un nombre entier :"));
+
+// while(isNaN(number) && number > 0){
+//     number = parseInt(prompt("Erreur, veuillez saisir un nombre entier :"))
+// }
+
+// for(let entier = 1; entier  < number / 2+1; entier++){
+//     let somme  = entier;
+//     let chaine = `${number} = ${entier}`;
+//     for(let j = entier + 1; j < number / 2+1; j++){
+//         somme += j;
+//         chaine += ` + ${j}`;
+//         if (somme > number)
+//             break;
+//         else if(somme === number){
+//             console.log(chaine);
+//             break;
+//         }
+//     }
+// }
+
+// -------------------------------------------------------------------------------------
+
+// function hello(){
+//     alert("Hello world!")
+// }
+// hello();
+
+// function helloSomeone(name) {
+//     alert(`Hello ${name}`);
+// }
+// helloSomeone("Toto");
+
+// function sum(a,b) {
+//     return a + b
+// }
+// console.log(sum(1,2))
+
+// function firstLetter(word){
+//     return word.charAt(0)
+// }
+// console.log(firstLetter("Toto"));
+
+// ----------------------------------------------------------------------------
+
+// function identity(firstName= "jOhN", lastName= "dOe"){
+//     return `${firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase()} ${lastName.charAt(0).toUpperCase() + lastName.slice(1).toLowerCase()}`
+// }
+// console.log(identity())
+
+// ----------------------------------------------------------------------------------
+
+// function substraction(a,b){
+//     console.log(`Je soustrais ${b} à ${a}`);
+//     return a - b
+// } 
+// console.log(substraction(2,1))
+
+// --------------------------------------------------------------------------------------
+
+// function quelleHeure(heure ="12h00"){
+//     console.log(`Il est ${heure}`);
+// }
+// quelleHeure();
+// quelleHeure("14h00")
+
+// function quelleHeure(heure ="12h00"){
+//     return heure
+// }
+// console.log(quelleHeure());
+// console.log(quelleHeure("14h00"));
+
+// ----------------------------------------------------------------
+
+// const ask = (question, yes, no) =>{if (confirm(question)){yes()}else{no()}}
+
+// ask("Do you agree?",
+// () => {
+//     alert("You agreed.");
+//     },
+//     () => {
+//         alert("You canceled the execution.")
+//     }
+// );
+
+// ----------------------------------------------------------------------
+
+// function palindrom(mot){
+//     let longueur = Math.floor(mot.length / 2)
+//     for (let i = 1; i < longueur / 2; i++){
+//         if(mot.charAt(i) !== mot.charAt(mot - 1 - i)){
+//             return false;
+//         }
+//     }return true
+// }
+
+// console.log(palindrom("azerty"));
+// console.log(palindrom("kayak"));
+
+// --------------------------------------------
+
+// function compterLettreA(chaine){;
+//     let count = 0;
+//     for (let i = 0; i <= chaine.length ; i++) {
+//         if(chaine[i] === 'a' || chaine[i] === 'A'){
+//           count ++
+//         }
+//     } return count;
+//     }
+// console.log(compterLettreA("abba"));
+// console.log(compterLettreA("mixer"));
+
+
+// ----------------------------------------
+
+// let tab = [
+//     "Pomme",
+//     "Orange",
+//     "Frites",
+//     false,
+//     0.5,
+//     4
+// ]
+// tab.push("fricadelle");
+// console.log(tab[2])
+// console.table(tab)
+
+let tab = []
+
+function tableau(number){
+    for (let i = 0; i < 10; i++) {
+        tab[i] = prompt("Saisir 10 chiffres :")
+        
+    }
+}
+
+console.log(tab)
