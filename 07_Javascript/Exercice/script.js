@@ -419,6 +419,6 @@ for (let i = 0; i < nbNotes; i++) {
 }
 console.log(`La plus grande note est ${maxNotes}`);
 console.log(`La plus petite note est ${minNotes}`);
-console.log(`La moyenne des notes est de ${moyenne}`);
+console.log(`La moyenne des notes est de ${numAverage(moyenne)}`);
 console.table(notes);
 
