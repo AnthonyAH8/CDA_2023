@@ -328,26 +328,31 @@
 // - Pour aller plus loin créez une fonction permettant de le remplir automatiquement avec des nombres aléatoires
 
 
-// let tableau = [];
+let tableau = [];
+let message = "";
 
+for (let i = 1; i <= 10; i++) {
+    let numberTableau = Number(prompt("Veuillez saisir des chiffres entre 1 et 100 :"));
+    if (isNaN(numberTableau)) {
+        alert("Valeur invalide, veuillez réessayer.");
+    } else {
+        tableau.push(numberTableau);
+    }
+        
+}
 
-// for (let i = 0; i < 10; i++) {
-//   let numberTableau = Number(prompt("Veuillez saisir des chiffres entre 1 et 100 :"));
-//   numberTableau = Number(numberTableau);
-//   if (isNaN(numberTableau)) {
-//     alert("Valeur invalide, veuillez réessayer.");
-//   } else {
-//     tableau.push(numberTableau);
-//   }
-// }
-// for (let i = 0; i < tableau.length; i++) {
-//   console.table(tableau[i]);
-// }
+for (let i = 0; i < tableau.length; i++) {
+    const tab = `\t`
+    message += `${tab * i}${tableau[i]} \n`
+}
+console.log(message);
 
 // function remplirTableau() {
 //     let number = Math.floor(Math.random() * 100);
 //     tableau.push(number);
 //   }
+//   console.log(remplirTableau())
+
 
 // --------------------------------------------------------------
 
@@ -377,6 +382,11 @@
 //   } else {
 //     console.log(`Le nombre ${nombre} est pair`);
 //   }
+    // if (nombre < 10 && nombre % 2 == 0) {
+    //     console.log(`Le nombre ${nombre} est impair`);
+    // } else{
+    //     console.log(`Le nombre  ${nombre} est  pair`);
+    // }
 // }
 
 // --------------------------------------------
@@ -389,36 +399,36 @@
 //   - Une fois la <b>saisie des notes terminée</b>, l'utilisateur aura à sa disposition un <b>affichage</b> lui permettant d'avoir la <b>note max</b>, la <b>note min</b> ainsi que la <b>moyenne</b> (possible de faire un menu pour choisir)
 //   - Pour les menus à choix, l'utilisation d'un switch est conseillée
 
-let notes = [];
+// let notes = [];
 
-let nbNotes = Number(prompt("Saisir un nombre de notes à entrer :"));
-let maxNotes = 0;
-let minNotes = 20;
-let moyenne = 0;
+// let nbNotes = Number(prompt("Saisir un nombre de notes à entrer :"));
+// let maxNotes = 0;
+// let minNotes = 20;
+// let moyenne = 0;
 
-for (let i = 0; i < nbNotes; i++) {
-    let note = Number(prompt("Saisir des notes entre 0 et 20 :"))
-    if (note < 0) {
-        alert("Mauvaise saisie")
-    } else if(note >= 0 && note <= 20){
-        notes.push(note)
-    }else{
-        alert("Mauvaise saisie, veuillez réessayer")
-    }
-    if(note > maxNotes){
-        maxNotes = note
-    }
-    if(note < minNotes){
-        minNotes = note
-    }
+// for (let i = 0; i < nbNotes; i++) {
+//     let note = Number(prompt("Saisir des notes entre 0 et 20 :"))
+//     if (note < 0) {
+//         alert("Mauvaise saisie")
+//     } else if(note >= 0 && note <= 20){
+//         notes.push(note)
+//     }else{
+//         alert("Mauvaise saisie, veuillez réessayer")
+//     }
+//     if(note > maxNotes){
+//         maxNotes = note
+//     }
+//     if(note < minNotes){
+//         minNotes = note
+//     }
 
-    let somme = 0
-    somme += notes[i]
-    moyenne /= notes.length
+//     let somme = 0
+//     somme += notes[i]
+//     moyenne /= notes.length
     
-}
-console.log(`La plus grande note est ${maxNotes}`);
-console.log(`La plus petite note est ${minNotes}`);
-console.log(`La moyenne des notes est de ${numAverage(moyenne)}`);
-console.table(notes);
+// }
+// console.log(`La plus grande note est ${maxNotes}`);
+// console.log(`La plus petite note est ${minNotes}`);
+// console.log(`La moyenne des notes est de ${numAverage(moyenne)}`);
+// console.table(notes);
 
