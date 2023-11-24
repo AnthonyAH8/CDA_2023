@@ -328,24 +328,22 @@
 // - Pour aller plus loin créez une fonction permettant de le remplir automatiquement avec des nombres aléatoires
 
 
-let tableau = [];
-let message = "";
+// let tableau = [];
+// let message = "";
 
-for (let i = 1; i <= 10; i++) {
-    let numberTableau = Number(prompt("Veuillez saisir des chiffres entre 1 et 100 :"));
-    if (isNaN(numberTableau)) {
-        alert("Valeur invalide, veuillez réessayer.");
-    } else {
-        tableau.push(numberTableau);
-    }
-        
-}
+// for (let i = 1; i <= 10; i++) {
+//     let numberTableau = Number(prompt("Veuillez saisir des chiffres entre 1 et 100 :"));
+//     if (isNaN(numberTableau)) {
+//         alert("Valeur invalide, veuillez réessayer.");
+//     }
+//     tableau.push(numberTableau);   
+// }
 
-for (let i = 0; i < tableau.length; i++) {
-    const tab = `\t`
-    message += `${tab * i}${tableau[i]} \n`
-}
-console.log(message);
+// for (let i = 0; i < tableau.length; i++) {
+//     const tab = `\t`
+//     message += `${tab.repeat(i)}${tableau[i]} \n`
+// }
+// console.log(message);
 
 // function remplirTableau() {
 //     let number = Math.floor(Math.random() * 100);
@@ -368,27 +366,23 @@ console.log(message);
 // ```
 
 // let choix = prompt("Saisir un nombre inférieur à 50 :");
-
 // let tableau = [];
+// let message = ""
 
 // for (let i = 0; i < choix; i++) {
-//   let nombre = Math.floor(Math.random() * 50) + 1;
-//   tableau.push(nombre);
+//     let nombre = Math.floor(Math.random() * 50) + 1;
+//     tableau.push(nombre);
 // }
 
 // for (let nombre of tableau) {
-//   if (nombre % 2 == 0) {
-//     console.log(`Le nombre ${nombre} est impair`);
-//   } else {
-//     console.log(`Le nombre ${nombre} est pair`);
+//     if (nombre % 2 === 0 && nombre > 10) {
+//     message += `Le nombre ${nombre} est pair\n`;
 //   }
-    // if (nombre < 10 && nombre % 2 == 0) {
-    //     console.log(`Le nombre ${nombre} est impair`);
-    // } else{
-    //     console.log(`Le nombre  ${nombre} est  pair`);
-    // }
+//   else{
+//     message += `Le nombre ${nombre} est impair\n`;
+//   }
 // }
-
+// console.log(message);
 // --------------------------------------------
 
 // # Exercice 23
@@ -405,30 +399,52 @@ console.log(message);
 // let maxNotes = 0;
 // let minNotes = 20;
 // let moyenne = 0;
+// let somme = 0
 
 // for (let i = 0; i < nbNotes; i++) {
 //     let note = Number(prompt("Saisir des notes entre 0 et 20 :"))
 //     if (note < 0) {
 //         alert("Mauvaise saisie")
-//     } else if(note >= 0 && note <= 20){
+//     } else if (note >= 0 && note <= 20) {
 //         notes.push(note)
-//     }else{
+//     } else {
 //         alert("Mauvaise saisie, veuillez réessayer")
 //     }
-//     if(note > maxNotes){
+//     if (note > maxNotes) {
 //         maxNotes = note
 //     }
-//     if(note < minNotes){
+//     if (note < minNotes) {
 //         minNotes = note
 //     }
 
-//     let somme = 0
-//     somme += notes[i]
-//     moyenne /= notes.length
-    
 // }
-// console.log(`La plus grande note est ${maxNotes}`);
-// console.log(`La plus petite note est ${minNotes}`);
-// console.log(`La moyenne des notes est de ${numAverage(moyenne)}`);
+
+
+    
+
 // console.table(notes);
 
+// function main() {
+//     while (true) {
+//         let choix = prompt("Faites votre choix :\n 1- Note la plus haute:\n 2- Note la plus basse:\n 3- Moyenne des notes:\n 0-Quitter\n Votre choix:\n ");
+//         switch (choix) {
+//             case "1":
+//                 alert(`La plus grande note est ${maxNotes}`);
+//                 break;
+//             case "2":
+//                 alert(`La plus petite note est ${minNotes}`);
+//                 break;
+//             case "3":
+//                 alert(`La moyenne de vos notes est de ${moyenne}`);
+//                 break;
+//             case "0":
+//                 alert("Au revoir");
+//                 return;
+//             default:
+//                 alert("Erreur de saisie, reéssayez")
+//                 break;
+//         }
+//     }
+// }
+
+// main()
