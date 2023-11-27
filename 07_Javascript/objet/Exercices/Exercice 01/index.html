@@ -6,35 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Date de naisance</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td id="firstName">John</td>
-                    <td id="lastName">Dupont</td>
-                    <td id="birthday">22/02/1968</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <input type="text" id="firstName">
-        <input type="text" id="lastName">
-        <input type="date" id="birthday">
-        <button id="addPerson">Ajouter</button>
+
+  <form>
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom"><br>
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom" name="prenom"><br>
+    <label for="date">Date de naissance:</label>
+    <input type="date" id="date" name="date"><br>
+    <button type="button" onclick="ajouterPersonne()">Ajouter</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Date de naissance</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
     </main>
     <script src="script.js"></script>
 </body>
