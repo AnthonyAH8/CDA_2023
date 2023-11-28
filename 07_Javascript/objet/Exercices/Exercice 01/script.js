@@ -7,7 +7,7 @@
 // Pour ce faire, pensez à utiliser un sélecteur permettant d'atteindre l'élément de type `<tbody>` de votre tableau. Cet élément devra contenir, pour chaque personne, un `<tr>` possédant plusieurs `<td>` (un par attribut de la personne). 
 
 let personnes = [];
-let peopleCount = 0;
+
 
 function ajouterPersonne() {
     let nom = document.getElementById("nom").value;
