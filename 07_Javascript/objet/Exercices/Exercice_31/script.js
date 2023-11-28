@@ -4,9 +4,9 @@ import Person from "./person.js";
 let personnes = [];
 
 // Création de quelques objets de type Person
-let p1 = new Person("Dupont", "Jean", "01/01/2000");
-let p2 = new Person("Durand", "Marie", "02/02/2001");
-let p3 = new Person("Martin", "Pierre", "03/03/2002");
+let p1 = new Person("toto", "titi", "01/01/2000");
+let p2 = new Person("Doe", "John", "08/11/1965");
+let p3 = new Person("Paul", "LePoulpe", "01/02/2003");
 
 // Ajout des personnes dans le tableau
 personnes.push(p1);
