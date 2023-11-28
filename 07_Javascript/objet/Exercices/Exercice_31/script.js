@@ -1,40 +1,32 @@
 import Person from "./person.js";
 
-// Création d'un tableau de personnes
 let personnes = [];
 
-// Création de quelques objets de type Person
 let p1 = new Person("toto", "titi", "01/01/2000");
 let p2 = new Person("Doe", "John", "08/11/1965");
 let p3 = new Person("Paul", "LePoulpe", "01/02/2003");
 
-// Ajout des personnes dans le tableau
 personnes.push(p1);
 personnes.push(p2);
 personnes.push(p3);
 
-// Affichage du tableau de personnes
 console.log(personnes);
 
-// Test du getter nomComplet
-console.log(p1.nomComplet); // Jean Dupont
+console.log(p1.nomComplet); 
 
-// Test du setter prenom
-p2.prenom = "donné"; // Prénom donné interdit
-p2.prenom = "Julie"; // Modification du prénom
-console.log(p2.nomComplet); // Julie Durand*
+
+p2.prenom = "donné";
+p2.prenom = "Jean"; 
+console.log(p2.nomComplet);
 let form = document.getElementById("form-person");
 let table = document.getElementById("table-person");
 
-// Fonction pour ajouter une personne dans le tableau et dans le DOM
+
 function ajouterPersonne(personne) {
-  // Ajout de la personne dans le tableau
   personnes.push(personne);
 
-  // Création d'un élément tr
   let tr = document.createElement("tr");
 
-  // Création des éléments td avec les données de la personne
   let tdNom = document.createElement("td");
   tdNom.textContent = personne._nom;
   let tdPrenom = document.createElement("td");
@@ -42,29 +34,23 @@ function ajouterPersonne(personne) {
   let tdDateNaissance = document.createElement("td");
   tdDateNaissance.textContent = personne._dateNaissance;
 
-  // Ajout des éléments td dans le tr
   tr.appendChild(tdNom);
   tr.appendChild(tdPrenom);
   tr.appendChild(tdDateNaissance);
 
-  // Ajout du tr dans le tbody du tableau
   table.querySelector("tbody").appendChild(tr);
 }
 
-// Gestion de l'événement submit du formulaire
 form.addEventListener("submit", function(e) {
-  // Empêche le comportement par défaut du formulaire
+
   e.preventDefault();
 
-  // Récupération des valeurs des champs du formulaire
   let nom = form.nom.value;
   let prenom = form.prenom.value;
   let dateNaissance = form.dateNaissance.value;
 
-  // Création d'un objet de type Person
   let personne = new Person(nom, prenom, dateNaissance);
 
-  // Ajout de la personne dans le tableau et dans le DOM
   ajouterPersonne(personne);
 
 });
