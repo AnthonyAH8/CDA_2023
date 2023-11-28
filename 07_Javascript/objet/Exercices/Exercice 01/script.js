@@ -6,7 +6,6 @@
 
 // Pour ce faire, pensez à utiliser un sélecteur permettant d'atteindre l'élément de type `<tbody>` de votre tableau. Cet élément devra contenir, pour chaque personne, un `<tr>` possédant plusieurs `<td>` (un par attribut de la personne). 
 
-
 var personnes = [];
 
 function ajouterPersonne() {
