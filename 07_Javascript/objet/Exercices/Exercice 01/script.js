@@ -7,6 +7,7 @@
 // Pour ce faire, pensez à utiliser un sélecteur permettant d'atteindre l'élément de type `<tbody>` de votre tableau. Cet élément devra contenir, pour chaque personne, un `<tr>` possédant plusieurs `<td>` (un par attribut de la personne). 
 
 let personnes = [];
+let peopleCount = 0;
 
 function ajouterPersonne() {
     let nom = document.getElementById("nom").value;
@@ -33,18 +34,17 @@ function afficherTableau() {
     for (let i = 0; i < personnes.length; i++) {
         let tr = document.createElement("tr");
         let tdNom = document.createElement("td");
+
         tdNom.textContent = personnes[i].nom;
         tr.appendChild(tdNom);
+
         let tdPrenom = document.createElement("td");
         tdPrenom.textContent = personnes[i].prenom;
         tr.appendChild(tdPrenom);
 
         let tdDate = document.createElement("td");
-
         tdDate.textContent = personnes[i].date;
-
         tr.appendChild(tdDate);
-
         tbody.appendChild(tr);
     }
 }
