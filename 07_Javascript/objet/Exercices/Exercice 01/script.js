@@ -6,14 +6,14 @@
 
 // Pour ce faire, pensez à utiliser un sélecteur permettant d'atteindre l'élément de type `<tbody>` de votre tableau. Cet élément devra contenir, pour chaque personne, un `<tr>` possédant plusieurs `<td>` (un par attribut de la personne). 
 
-var personnes = [];
+let personnes = [];
 
 function ajouterPersonne() {
-    var nom = document.getElementById("nom").value;
-    var prenom = document.getElementById("prenom").value;
-    var date = document.getElementById("date").value;
+    let nom = document.getElementById("nom").value;
+    let prenom = document.getElementById("prenom").value;
+    let date = document.getElementById("date").value;
 
-    var personne = {
+    let personne = {
         nom: nom,
         prenom: prenom,
         date: date
@@ -25,21 +25,21 @@ function ajouterPersonne() {
 }
 
 function afficherTableau() {
-    var tbody = document.querySelector("tbody");
+    let tbody = document.querySelector("tbody");
 
     tbody.innerHTML = "";
 
 
-    for (var i = 0; i < personnes.length; i++) {
-        var tr = document.createElement("tr");
-        var tdNom = document.createElement("td");
+    for (let i = 0; i < personnes.length; i++) {
+        let tr = document.createElement("tr");
+        let tdNom = document.createElement("td");
         tdNom.textContent = personnes[i].nom;
         tr.appendChild(tdNom);
-        var tdPrenom = document.createElement("td");
+        let tdPrenom = document.createElement("td");
         tdPrenom.textContent = personnes[i].prenom;
         tr.appendChild(tdPrenom);
 
-        var tdDate = document.createElement("td");
+        let tdDate = document.createElement("td");
 
         tdDate.textContent = personnes[i].date;
 
