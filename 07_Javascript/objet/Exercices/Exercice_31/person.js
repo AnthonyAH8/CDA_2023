@@ -1,11 +1,19 @@
-export default class Person{
-    firstname;
-    lastname;
-    birthdate;
-
-    constructor(firstname, lastname, birthdate){
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.birthdate = birthdate;
+export default class Person {
+    constructor(nom, prenom, dateNaissance) {
+      this.nom = nom;
+      this.prenom = prenom;
+      this.dateNaissance = dateNaissance;
     }
-}
+  
+    get nomComplet() {
+      return this.prenom + " " + this.nom;
+    }
+
+    set prenom(prenom) {
+      if (prenom !== "donné") {
+        this._prenom = prenom;
+      } else {
+        console.log("Prénom donné interdit");
+      }
+    }
+  }
