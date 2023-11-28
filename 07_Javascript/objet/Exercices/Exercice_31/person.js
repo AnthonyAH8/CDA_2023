@@ -10,6 +10,7 @@ export default class Person {
     }
 
     set prenom(prenom) {
+
       if (prenom !== "donné") {
         this._prenom = prenom;
       } else {
