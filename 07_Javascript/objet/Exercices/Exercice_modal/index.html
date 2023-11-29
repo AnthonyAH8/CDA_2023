@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="modal" style="display: none;">
+        <div id="content">
+            <div id="content-header">
+                <h1>Mon formulaire</h1>
+                <button id="modal-validation">X</button>
+            </div>
+                <form action="#" id="monForm">
+                    <div>
+                        <label for="name">Nom du chat:</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="age">Age du chat:</label>
+                        <input type="number" name="age" id="age">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="race">Race du chat:</label>
+                        <input type="text" name="race" id="race">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="color">Couleur du chat:</label>
+                        <input type="text" name="color" id="color">
+                    </div>
+                    <br>
+                    <button id="submit-form">Valider</button>
+                </form>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Age</th>
+                <th>Race</th>
+                <th>Couleur</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody id="my-tbody"></tbody>
+    </table>
+    <button id="modal-form">Formulaire</button>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

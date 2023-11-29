@@ -1,7 +1,6 @@
 const monForm = document.getElementById("monForm")
 const submitButton = document.getElementById("submitButton")
 
-
 const inputContact = document.querySelector('input')
 inputContact.addEventListener('input', (event) => {
     const userName = event.target

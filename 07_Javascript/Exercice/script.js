@@ -449,18 +449,18 @@
 
 // ---------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', () =>{
+// document.addEventListener('DOMContentLoaded', () =>{
 
-    const monElement = document.getElementById('blabla')
-    console.log(monElement);
-    monElement.textContent = "Hello world";
-    monElement.innerHTML = "<b>Hello</b> world";
-    monElement.addEventListener("click", () =>{
-        console.log("Paragraphe")
-    })
-})
+//     const monElement = document.getElementById('blabla')
+//     console.log(monElement);
+//     monElement.textContent = "Hello world";
+//     monElement.innerHTML = "<b>Hello</b> world";
+//     monElement.addEventListener("click", () =>{
+//         console.log("Paragraphe")
+//     })
+// })
 
-const Cliquer = () => {
-    console.log("Hello world")
-}
+// const Cliquer = () => {
+//     console.log("Hello world")
+// }
 
