@@ -18,7 +18,22 @@ modalForm?.addEventListener("click", () =>{
     modal.style.display = "flex"
 })
 
-let cat =[];
+let cat =[
+    {
+        name : "titi",
+        age : 5,
+        race: 'persian',
+        color: 'grey'
+    },
+    {
+        name : "balthazar",
+        age : 2,
+        race: 'stray',
+        color: 'ginger'
+    }
+];
+
+console.log(cat)
 
 const monForm = document.getElementById("monForm")
 monForm.addEventListener("submit", (e) =>{
@@ -39,6 +54,7 @@ const TDrace = document.createElement("td");
 const TDcolor = document.createElement("td");
 const deleteTR = document.createElement("td");
 const deleteCat = document.createElement("button");
+const editCat = document.createElement("button")
     
     TDname.textContent = newCat.name
     TDage.textContent = newCat.age
@@ -62,3 +78,14 @@ const deleteCat = document.createElement("button");
     console.log(cat);
 
 })
+
+
+function tri(a, b){
+    if (a.TDname < b.TDname) {
+        return -1
+    } if (a.TDname < b.TDname) {
+        return 1
+    }
+}
+var alphabet = cat.sort(tri)
+console.log(alphabet)
