@@ -54,7 +54,7 @@ const TDrace = document.createElement("td");
 const TDcolor = document.createElement("td");
 const deleteTR = document.createElement("td");
 const deleteCat = document.createElement("button");
-const editCat = document.createElement("button")
+
     
     TDname.textContent = newCat.name
     TDage.textContent = newCat.age

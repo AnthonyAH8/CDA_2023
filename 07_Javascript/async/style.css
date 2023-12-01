@@ -1,0 +1,63 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+
+    & h1 {
+        margin: 0;
+        padding: 0;
+
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & button {
+        margin: 0px 20px;
+        background-color: hsl(46, 100%, 50%, 0.7);
+        border: none;
+        color: white;
+        padding: 12px 26px;
+        text-align: center;
+        font-size: 0.9em;
+        border-radius: 20px;
+    }
+}
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: calc(100vh - 500px);
+    height: calc(100vh - 500px);
+
+    & img {
+        height: 12em;
+        width: 12em;
+        border-radius: 20px;
+        border: 1px solid black;
+        display: flex;
+        margin: 5px 0;
+
+    }
+}
+
+.inputSearch {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0
+}
+
+#name {
+    margin-right: 10px;
+}
