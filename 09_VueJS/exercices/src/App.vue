@@ -30,7 +30,7 @@ function addTodo(){
 }
 
 function doneTodo(){
-  activities.value.splice(activities.value)
+  activities.value.splice(0,1)
 }
 
 // function filtertasks(){
