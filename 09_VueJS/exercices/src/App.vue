@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { reactive, ref } from 'vue';
 
 // let table = ref([2, 4, 6, 8])
@@ -22,7 +22,7 @@ import { reactive, ref } from 'vue';
 let activities = ref(['Réviser', 'Coder', 'Faire les courses'])
 let todo = ref("")
 let checked = ref(true)
-let filter = ref("")
+let filter = ref("all")
 
 function addTodo(){
   activities.value.push(todo.value)
@@ -58,18 +58,22 @@ function doneTodo(){
       <input type="radio" id="done" value="done" v-model="checked" />
       <label for="done">Fait</label>
     </div>
+    <div>
+      <select v-model="filter">
+        <option disabled value="">Etat de la tâche</option>
+        <option>A faire</option>
+        <option>Fait</option>
+      </select>
+    </div>
 
     <div>
       <button @click="addTodo">A faire</button>
       <button @click="doneTodo">Fait</button>
     </div>
 
-    <div>
-      
-    </div>
 
   </form>
-  <!-- <div>
+  <div>
     <button @click="toggle = !toggle">Toggle liste</button>
     <button @click="addValue">Ajouter élément</button>
     <button @click="deleteValue">Supprimer élément</button>
@@ -89,10 +93,10 @@ function doneTodo(){
 <style scoped>
 
 </style>
+
 <!-- # TodoList
 
 1. Créer un champ de saisi pour un formulaire
 2. Ajouter un todo à une liste réactive
 3. On peut éditer le statut d'une todo via une checkbox
 4. Ajouter des boutons pour trier la todolist (ex: done, à faire) -->
-
