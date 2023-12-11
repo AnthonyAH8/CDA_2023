@@ -15,7 +15,8 @@ const removeTodo = index => {
 }
 
 const updateTodo = (index) => {
-   const update = todos[index]
+    update = ''
+    todos.value.push({text: newTodoText})
 }
 </script>
 
