@@ -230,11 +230,11 @@ watchEffect(async () => {
 <template>
   <div v-if="data" class="pokedex">
     <label>ID ou Nom du pokémon:</label>
-    <input type="text" v-model="id" placeholder="ID du pokémon">
+    <input type="text" v-model="id" placeholder="ID du pokémon:">
     <img :src="data.sprites.front_default">
     <span>Nom: {{ data.name }}</span>
     <span>Taille: {{ data.height }} pouces </span>
-    <span>Poids: {{ data.weight }} kg</span>
+    <span>Poids: {{ data.weight }} lbs </span>
   </div>
 </template>
 
@@ -242,33 +242,38 @@ watchEffect(async () => {
 .pokedex {
 
   position: relative;
-  margin: 0 auto;
+  margin: 50px auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(255, 0, 0, 0.85);
-  color: lightseagreen;
+  background-color: rgba(245, 20, 0, 0.6);
+  color: teal;
   height: 600px;
   width: 600px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 10px;
 
   & span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 20px 0;
   }
 
   & label{
     margin-bottom: 10px;
+    font-size: 2rem;
   }
 
   & input{
-    background-color: bisque;
+    background-color: #fff;
     width: 20rem;
     box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
   }
   & input[type=text]{
-    color: lightseagreen;
+    color: teal;
+    align-items: center;
   }
 }
 
@@ -276,8 +281,8 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 1px solid black;
   background-image: contain;
 }
