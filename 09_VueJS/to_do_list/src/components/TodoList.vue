@@ -4,7 +4,7 @@ import AddTodo from './AddTodo.vue';
 import TodoItem from './TodoItem.vue';
 
 const todos = ref([]);
-
+const newTodoText = ref('')
 
 const addTodo = newTodoText => {
   todos.value.push({text: newTodoText})
@@ -14,9 +14,8 @@ const removeTodo = index => {
   todos.value.splice(index,1)
 }
 
-const updateTodo = (index) => {
-    update = ''
-    todos.value.push({text: newTodoText})
+const updateTodo = (index, newTodoText) => {
+    todos.value[index].text = newTodoText;
 }
 </script>
 

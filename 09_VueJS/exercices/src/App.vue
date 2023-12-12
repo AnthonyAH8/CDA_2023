@@ -88,17 +88,18 @@ function doneTodo(){
   <div v-if="table.length === 0">
     <p>Le tableau est vide</p>
   </div> -->
-<!-- </template>
+</template>
 
 <style scoped>
 
-</style> -->
+</style>
 
 <!-- # TodoList
 
 1. Créer un champ de saisi pour un formulaire
 2. Ajouter un todo à une liste réactive
 3. On peut éditer le statut d'une todo via une checkbox
+<<<<<<< HEAD
 4. Ajouter des boutons pour trier la todolist (ex: done, à faire) --> -->
 
 <!-- <script setup>
@@ -297,3 +298,5 @@ input:focus{
   color: lightseagreen;
 }
 </style>
+
+
