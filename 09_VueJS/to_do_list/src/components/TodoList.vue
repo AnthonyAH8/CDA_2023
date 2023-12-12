@@ -14,13 +14,16 @@ const removeTodo = index => {
   todos.value.splice(index,1)
 }
 
-const updateTodo = (index, newTodoText) => {
-    todos.value[index].text = newTodoText;
+const updateTodo = (index) => {
+  console.log(index);
+  let choice = prompt("Modifier la tâche:")
+  console.log(choice)
+  todos.value[index].text = choice;
 }
+
 </script>
 
 <template>
-  
 
 <div>
   <AddTodo @add-todo="addTodo" />

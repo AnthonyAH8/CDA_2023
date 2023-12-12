@@ -22,7 +22,7 @@ const props = defineProps({
   </div>
   <div>
     <button class="btn btn-danger mx-2" @click="$emit('remove-todo', index)">Remove</button>
-    <button class="btn btn-secondary" @click="$emit('update-todo', todo)">Update</button>
+    <button class="btn btn-secondary" @click="$emit('update-todo', index)">Update</button>
   </div>
  </li>
 </template>
