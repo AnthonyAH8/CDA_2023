@@ -23,6 +23,7 @@ getCaracters()
         </div>
       </div>
     </main>
+  </body>
     <footer>
       <div>
         <img src="./assets/logo.jpg" alt="utopios">
@@ -32,7 +33,6 @@ getCaracters()
         <img src="./assets/linkedin.png" alt="linkedin">
       </div>
     </footer>
-  </body>
 </template>
 
 <style scoped>
@@ -42,6 +42,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 10px;
 
   img {
     height: 40px;
@@ -54,6 +55,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 
   h1{
     color: #fff;
@@ -67,7 +69,7 @@ main{
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 50%;
+  max-width: 66%;
   
 }
 .card{

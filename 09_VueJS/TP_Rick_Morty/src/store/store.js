@@ -11,7 +11,7 @@ export const useCharacters = defineStore('store', () => {
     
     async function getCaracters () {
         try {
-            const result = await fetch(`https://rickandmortyapi.com/api/character/?page=1`)
+            const result = await fetch(`https://rickandmortyapi.com/api/character/?page=2`)
             characters.value = await result.json();
          //   console.log(characters.value)
         } catch (error) {
