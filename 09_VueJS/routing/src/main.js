@@ -51,4 +51,4 @@ app.provide("contacts", {
     contacts
 });
 app.use(router);
-app.mount('#app');
+app.mount('#app')
