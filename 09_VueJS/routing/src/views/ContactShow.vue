@@ -1,10 +1,11 @@
+<script setup>
 
 import { RouterLink } from 'vue-router';
-<script setup>
 
 import { useRouter } from 'vue-router';
 import { useRoute } from 'vue-router';
 import { inject } from 'vue';
+import Error404 from './Error404.vue';
 
 const { contacts } = inject('contacts');
 
@@ -15,13 +16,17 @@ const { contactID } = route.params
 
 const customers = contacts.value.find(customer => customer.id === contactID);
 
+if(!customers){
+  router.push(Error404)
+}
+
 </script>
 
 <template>
     <div class="container">
         <ul v-for="customer of contacts">
             <li>
-            <RouterLink :to="`/contactShow/${customer.id}`">
+            <RouterView>
                 {{ customer.name }}
                 {{ customer.email }}
                 {{ customer.phone }}
@@ -29,7 +34,7 @@ const customers = contacts.value.find(customer => customer.id === contactID);
                 {{ customer.state }}
                 {{ customer.country }}
                 {{ customer.additionnalInfo }}
-            </RouterLink>
+            </RouterView>
             </li>
         </ul>
     </div>
