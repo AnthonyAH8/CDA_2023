@@ -1,5 +1,6 @@
 <script setup>
 import { useCharacters } from '../src/store/store';
+import Pagination from './components/Pagination.vue';
 
 
 const CharactersStore = useCharacters()
@@ -13,7 +14,6 @@ getCaracters()
   <header class="bg-primary">
     <h1>Rick & Morty M2i</h1>
   </header>
-  <body class= "d-flex justify-content-center">
     <main>
       <div v-for="character in CharactersStore.characters.results" :key="character.id" class="character">
         <div class="card">
@@ -23,7 +23,8 @@ getCaracters()
         </div>
       </div>
     </main>
-  </body>
+    <Pagination class=""/>
+
     <footer>
       <div>
         <img src="./assets/logo.jpg" alt="utopios">
@@ -65,11 +66,9 @@ header {
 
 main{
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 66%;
   
 }
 .card{
@@ -77,7 +76,7 @@ main{
   border-radius: 10px;
   background-image: cover;
   padding: 10px;
-  margin: 5px;
+  margin: 60px;
 }
 
 .character{

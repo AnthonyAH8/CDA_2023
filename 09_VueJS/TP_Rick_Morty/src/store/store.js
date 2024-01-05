@@ -1,22 +1,36 @@
-import { defineStore } from "pinia";
-import { ref } from "vue";
-
-let id = ref("");
-// let data = ref(null)
-let error = ref(null)
-let characters = ref()
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
 export const useCharacters = defineStore('store', () => {
-    // const filter = ref('all') Filtre //
-    
-    async function getCaracters () {
-        try {
-            const result = await fetch(`https://rickandmortyapi.com/api/character/?page=2`)
-            characters.value = await result.json();
-         //   console.log(characters.value)
-        } catch (error) {
-            error.value = error.message
-        }
+  const id = ref('');
+  // let data = ref(null)
+  const error = ref(null)
+  const characters = ref()
+  const page = ref(1)
+
+  // const filter = ref('all') Filtre //
+
+  const getCaracters = async () => {
+    try {
+      const result = await fetch(`https://rickandmortyapi.com/api/character/?page=${page.value}`)
+      characters.value = await result.json();
+    } catch (err) {
+      error.value = err.message
     }
-    return { id, error, characters, getCaracters}
+  }
+
+  const changePage = (pageNumber) => {
+    page.value = pageNumber;
+    getCaracters();
+  }
+
+  const currentPage = ref(1);
+  const itemsPage = ref(20)
+  const displayedItems = () => {
+    const start = (currentPage.value - 1) * itemsPage.value;
+    const end = start + itemsPage.value;
+    return characters.value.slice(start, end);
+  };
+
+  return { id, error, characters, getCaracters, currentPage, itemsPage, displayedItems, changePage }
 })
