@@ -146,7 +146,7 @@ LIMIT 3;
 ```sql
 SELECT MAX(age) FROM users;
 
-SELECT MAX(age) AS developer_max_age
+SELECT MIN(age) AS developer_min_age
 FROM users
 WHERE job = 'Developer';
 
@@ -159,4 +159,79 @@ FROM users
 SELECT AVG(salary) AS avg_salary_without_devs
 FROM users
 WHERE job != 'Developer';
+```
+
+```sql
+SELECT MIN(salary) AS lowest_salary
+FROM users;
+
+SELECT MAX(age) AS oldest
+FROM users
+WHERE job = 'Engineer';
+
+SELECT ROUND(AVG(salary), 0) AS average_salary
+FROM users
+WHERE job = 'Teacher';
+
+SELECT SUM(salary) AS total_salary 	
+FROM users;
+```
+
+#### GROUP BY
+
+```sql
+SELECT birth_location, SUM(salary)
+FROM users
+GROUP BY birth_location
+
+SELECT birth_location, AVG(salary)
+FROM users
+GROUP BY birth_location
+ORDER BY AVG(salary) DESC
+```
+
+#### HAVING
+
+```sql
+SELECT birth_location, AVG(salary) AS average_salary
+FROM users
+GROUP BY birth_location
+HAVING AVG(salary) > 3000;
+```
+
+Il faut appliquer le filtre avant de grouper.
+HAVING sans GROUP BY n'a pas de sens
+
+#### LIKE
+
+```sql
+SELECT *
+FROM users
+WHERE birth_location LIKE 'P%';
+```
+
+% = N'importe quelle séquence, y compris sans aucune.  
+_ = Représente exactement un caractère
+
+```sql
+LIKE '_o%': Renvoie toutes les valeurs où la seconde lettre est o
+LIKE 'a%': Renvoie toutes les valeurs commençant par 'a'.
+LIKE '%o': Renvoie toutes les valeurs terminant par 'o'.
+LIKE '%or%': Renvoie toutes les valeurs contenant 'or'.
+
+SELECT *
+FROM users
+WHERE first_name LIKE 'D%';
+
+SELECT *
+FROM users
+WHERE last_name LIKE '%son';
+
+SELECT *
+FROM users
+WHERE first_name LIKE '_____';
+
+SELECT *
+FROM users
+WHERE job LIKE '%Doctor%';
 ```
