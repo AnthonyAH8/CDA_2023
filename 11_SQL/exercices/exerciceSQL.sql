@@ -79,8 +79,6 @@ VALUES
 SELECT * FROM Customers;
 SELECT * FROM Categories;
 
-
-
 INSERT INTO Categories(categorie_name)
 VALUES
 	('Stratégie'),
@@ -93,40 +91,142 @@ VALUES
     (8, "2024-01-10", '345 Boulevard du Bonheur, Ville', 'En Cours de préparation'),
     (12, "2024-01-10", '234 Rue de la Découverte, Ville', 'Livraison dans la journée');
 
+-- Mettez à jour le prix du jeu avec l'ID 3 (Les Aventuriers) pour le fixer à 35 €
 UPDATE Games
 SET price = 35
 WHERE id = 3;
 
+-- Supprimez le jeu avec l'ID 2 (Dixit) de la table "Jeux".
 DELETE FROM Games
 WHERE game_name = 'Dixit';
 
+-- Sélectionnez tous les noms de catégories distinctes
 SELECT * FROM Categories;
 
+-- Montrez les catégories avec des noms commençant par "A" ou "S"
 SELECT *
 FROM Categories
 WHERE categorie_name LIKE 'A%' OR categorie_name LIKE 'S%';
 
+-- Quelles catégories ont un ID entre 2 et 5 inclus ?
 SELECT *
 FROM Categories
 WHERE id BETWEEN 2 AND 5;
 
+-- Combien de catégories différentes existent ?
 SELECT count(id)
 FROM Categories;
 
+-- Quelle est la catégorie ayant le nom le plus long ?
 SELECT MAX(LENGTH(categorie_name)) AS max_length_category_letters
 FROM Categories;
 
+-- Montrez le nombre de jeux dans chaque catégorie.
+SELECT COUNT(Categories.id), categorie_name
+FROM Categories
+INNER JOIN Games ON Categories.id = Games.id_categorie
+GROUP BY categories.id;
+
+--  Affichez les catégories triées par ordre alphabétique inversé
 SELECT categorie_name
 FROM Categories
 ORDER BY categorie_name DESC;
 
 
 -- Games
+
+-- Sélectionnez tous les noms de jeux distincts
 SELECT * FROM Games;
 
-
+-- Montrez les jeux avec un prix entre 25 et 40
 SELECT * FROM Games
 WHERE price BETWEEN 25 AND 40;
 
+-- Quels jeux appartiennent à la catégorie avec l'ID 3 ?
 SELECT * FROM Games
 WHERE id_categorie = 3;
+
+-- Combien de jeux ont une description contenant le mot "aventure" ?
+SELECT * FROM Games
+WHERE game_description LIKE '%aventure%';
+
+-- Quel est le jeu le moins cher ?
+SELECT game_name, MIN(price)
+FROM Games;
+
+
+-- Montrez la somme totale des prix de tous les jeux.
+SELECT SUM(price) FROM Games;
+
+--  Affichez les jeux triés par ordre alphabétique des noms en limitant les résultats à 
+-- 5.
+SELECT game_name 
+FROM Games
+ORDER BY game_name ASC LIMIT 5; 
+
+-- Sélectionnez tous les prénoms des clients distincts.
+SELECT * FROM Customers;
+
+-- Montrez les clients dont l'adresse contient "Rue" et dont le numéro de téléphone 
+-- commence par "+1".
+SELECT * FROM Customers
+WHERE adress LIKE '%Rue%' AND phone LIKE '+1%';
+
+-- Quels clients ont un nom commençant par "M" ou "R" ?
+SELECT * FROM Customers
+WHERE last_name LIKE 'M%' OR last_name LIKE'R%';
+
+
+--  Combien de clients ont une adresse e-mail valide (contenant "@") ?
+SELECT * FROM Customers
+WHERE mail LIKE '%@%';
+
+
+-- Quel est le prénom le plus court parmi les clients ?
+SELECT MIN(first_name) FROM Customers;
+
+-- Montrez le nombre total de clients enregistrés.
+SELECT Count(last_name) FROM Customers;
+
+-- Affichez les clients triés par ordre alphabétique des noms de famille, mais en 
+-- excluant les premiers 3
+SELECT * 
+FROM Customers
+ORDER BY last_name ASC
+LIMIT 15 OFFSET 3;
+
+-- Sélectionnez les noms des clients, noms de jeux et date de commande pour 
+-- chaque commande passée
+SELECT last_name, date_order, game_name
+FROM Customers
+INNER JOIN Commandes ON Customers.id = Commandes.id_client
+INNER JOIN Games ON Customers.id = Games.id;
+
+-- Sélectionnez les noms des clients et le montant total dépensé par chaque client. 
+-- Triez les résultats par montant total décroissant.
+SELECT last_name, price, id_client
+FROM Customers
+INNER JOIN Games ON Customers.id = Games.id
+INNER JOIN Commandes ON Customers.id = Commandes.id_client
+ORDER BY price ASC;
+
+-- Sélectionnez les noms des jeux, noms de catégories et prix de chaque jeu.
+SELECT game_name, categorie_name, price
+FROM Categories
+INNER JOIN Games ON Categories.id = Games.id_categorie;
+
+-- Sélectionnez les noms des clients, date de commande et noms de jeux pour 
+-- toutes les commandes passées
+SELECT last_name, date_order, game_name
+FROM Customers
+LEFT JOIN Commandes ON Customers.id = Commandes.id_client
+LEFT JOIN Games ON Customers.id = Games.id;
+
+-- Sélectionnez les noms des clients, nombre total de commandes par client et 
+-- montant total dépensé par client. Incluez uniquement les clients ayant effectué 
+-- au moins une commande
+SELECT last_name, price, id_client
+FROM Customers
+LEFT JOIN Games ON Customers.id = Games.id
+LEFT JOIN Commandes ON Customers.id = Commandes.id_client
+WHERE id_client > 0;
