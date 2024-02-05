@@ -6,7 +6,7 @@ function isAuthenticated(req, result, next){
         const verifyToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
         return next();
     }catch (error){
-        res.status(401).json({ message: "Connexion requise" });
+        result.status(401).json({ message: "Connexion requise" });
     }
 }
 
