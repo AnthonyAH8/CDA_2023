@@ -18,3 +18,21 @@ exports.createStudent = async (req, res) => {
         res.status(500).json({ message: 'Mauvaise saisie'})
     }
 }
+
+exports.updateStudent = async (req, res) => {
+    try {
+        const updatedStudent = await Student.update({where: {lastname: req.params.id}});
+        res.status(201).json(updatedStudent)
+    } catch (error) {
+        res.status(500).json({ message: 'Mauvaise saisie'})
+    }
+}
+
+exports.deleteStudent = async (req, res) => {
+    try {
+        const deletedStudent = await Student.destroy({where: {lastname: req.params.id}});
+        res.status(201).json(deletedStudent)
+    } catch (error) {
+        res.status(500).json({ message: 'Mauvaise saisie'})
+    }
+}
