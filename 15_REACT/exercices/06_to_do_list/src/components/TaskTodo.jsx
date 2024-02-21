@@ -6,11 +6,14 @@ const Task = ({ onTask }) => {
   const taskDateRef = useRef();
 
   const addTask = () => {
-    const taskName = taskNameRef.current.value;
-    const description = taskDescriptionRef.current.value;
-    const date = taskDateRef.current.value;
+        const addTodo = {
+            id: Date.now(),
+            taskName: taskNameRef.current.value,
+            description: taskDescriptionRef.current.value,
+            date: taskDateRef.current.value
+        }
 
-    onTask({ taskName, description, date });
+    onTask(addTodo);
 
     taskNameRef.current.value = "";
     taskDescriptionRef.current.value = "";

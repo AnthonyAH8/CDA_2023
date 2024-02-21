@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 const TaskList = ({ tasksList, taskDelete }) => {
 
-  
-
     const [tasks, setTasks] = useState([]);
 
   return (

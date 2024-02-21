@@ -11,7 +11,7 @@ const TaskGestion = () => {
     };
 
     const handleToggleStatus = (taskId) => {
-        setTasks(tasks.map(task => (task.id === taskId ? { ...task, completed: !task.completed } : task)));
+        setTasks(tasks.find(task => (task.id === taskId ? { ...task, completed: !task.completed } : task)));
     };
 
     const handleDeleteTask = (taskId) => {
