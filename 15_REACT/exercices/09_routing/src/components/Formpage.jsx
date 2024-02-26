@@ -1,6 +1,6 @@
 const Formpage = () => {
     return ( 
-        <>
+        <div>
         <h1>Formulaire d'inscription: </h1>
         <label htmlFor="">Pseudo : </label>
         <input type="text" />
@@ -10,7 +10,7 @@ const Formpage = () => {
         <input type="text" />
         <br />
         <hr />
-    </>
+    </div>
      );
 }
  

@@ -7,9 +7,9 @@ const Errorpage = () => {
     <div>
         <Link to={'/'}>Page d'accueil</Link>
     </div>
-        <img src="./vqo9n.jpg" alt="" className='rounded mb-2'/>
-        <h2>Cette page n'est pas disponible</h2>
-        <p className='fs-bold'>Raison : {error.data}</p>
+        <img src="./vqo9n.jpg" alt="" className='rounded my-2'/>
+        <h2 className='fw-lighter'>Cette page n'est pas disponible</h2>
+        <p className='fw-bold'>Raison : {error.data}</p>
     </> 
     );
 }
