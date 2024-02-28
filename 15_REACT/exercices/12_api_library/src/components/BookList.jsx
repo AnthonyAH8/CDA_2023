@@ -25,7 +25,7 @@ const BookList = () => {
                         <div key={book.key} className="d-flex text-center card align-items-center p-3 border border-dark w-25 my-3">
                             <img src={`https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`} alt="" className="w-25 my-4" />
                             <p><span className="fw-bolder">Titre du livre:</span> {book.title}</p>
-                            <Link to={`/detail/${book.key}`} className="btn btn-primary">Détail du livre</Link>
+                            <Link to={`${book.key}`} className="btn btn-primary">Détail du livre</Link>
                         </div>
                     ))
                 }

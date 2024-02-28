@@ -8,7 +8,7 @@ const router = createBrowserRouter([
         element: <BookList/>
     },
     {
-        path: '/detail/:key',
+        path: '/works/:olid',
         element: <BookDetails/>
     }
 ])
