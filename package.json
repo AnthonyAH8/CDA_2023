@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "pug": "^3.0.2"
+    "@reduxjs/toolkit": "^2.2.1",
+    "pug": "^3.0.2",
+    "react-redux": "^9.1.0"
   }
 }
