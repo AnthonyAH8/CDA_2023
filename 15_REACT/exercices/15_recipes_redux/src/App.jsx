@@ -6,6 +6,8 @@ import SignForm from './components/auth/SignForm'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RecipeHeader from './components/recipes/recipeHeader'
 import AddRecipe from './components/recipes/addRecipe';
+import RecipeItem from './components/recipes/recipeItem';
+import RecipeList from './components/recipes/recipesList';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +17,8 @@ function App() {
       <RecipeHeader />
       <SignForm />
       <AddRecipe/>
+      <RecipeItem/>
+
     </>
   )
 }
