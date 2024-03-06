@@ -23,9 +23,9 @@ const SignForm = () => {
         }
 
         axios.post(URL, credentials).then((response) => {
-            console.log(response.data);
             localStorage.setItem("token", response.data.idToken)
             dispatch(setUser(response.data))
+            dispatch(setAuthMode(""))
         })
     }
     return (
@@ -39,7 +39,7 @@ const SignForm = () => {
                     </div>
                     <div className="d-flex justify-content-center flex-column align-items-center mb-3">
                         <label htmlFor="password">Mot de passe: </label>
-                        <input type="password" ref={passwordRef} className="rounded form-control" />
+                        <input type="password" ref={passwordRef} className="rounded form-control border-teal-600" />
                     </div>
                     <button className="btn btn-warning">{authMode}</button>
                 </form>
