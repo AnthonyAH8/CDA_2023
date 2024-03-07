@@ -24,30 +24,17 @@ const PokemonDetails = () => {
             {
                 pokemon && (
                     <div className="d-flex w-full justify-content-around align-items-center mt-5">
-                        <div>
+                        <div className="border border-dark rounded">
                             <img src={pokemon.sprites?.shiny} className="rounded align-items-center" width={500} height={500} />
                         </div>
                         <div>
-
                             <p className="text-center mt-2 fw-semibold">Nom: {pokemon.name?.fr}</p>
                             <p className="text-center fw-semibold">Numéro pokédex: {pokemon.pokedex_id}</p>
                             <p className="text-center fw-semibold">XP: {pokemon.stats.hp}</p>
                             <p className="text-center fw-semibold">Taille: {pokemon.height}</p>
                             <p className="text-center fw-semibold">Poids: {pokemon.weight}</p>
-                            <div>
-                                {
-                                    pokemon.types.map(p => (
-                                        <p>Type: {p.name}</p>
-                                    ))
-                                }
-                            </div>
-                            <div>
-                                {
-                                    pokemon.talents.map(p => (
-                                        <p className="">Talent: {p.name}</p>
-                                    ))
-                                }
-                            </div>
+                            <div className="text-center fw-semibold">{pokemon.types.map(p => (<p>Type: {p.name}</p>))}</div>
+                            <div className="text-center fw-semibold">{pokemon.talents.map(p => (<p className="">Talent: {p.name}</p>))}</div>
                         </div>
                     </div>
                 )
