@@ -36,26 +36,26 @@ const AddAlbumForm = () => {
         <>
             <h2 className='text-center p-5'>Ajouter un album</h2>
 
-            <form onSubmit={submitNewAlbum} className='grid justify-center items-center text-center my-4'>
-                <div className='rounded w-full py-2 px-3 flex flex-col text-gray-700 items-start '>
-                    <label htmlFor="title" className='py-2'>Nom de l'album :</label>
-                    <input type="text" required ref={titleRef} className='p-2 shadow'/>
+            <form onSubmit={submitNewAlbum} className='grid justify-center items-center text-center my-4 bg-gray-500 p-4'>
+                <div className='rounded w-full py-2 px-3 flex flex-col text-gray-700 items-start'>
+                    <label htmlFor="title" className='py-2 text-white'>Nom de l'album :</label>
+                    <input type="text" required ref={titleRef} className='p-2 shadow rounded'/>
                 </div>
                 <div className='rounded w-full py-2 px-3 text-gray-700 flex flex-col items-start'>
-                    <label htmlFor="releaseDate" className='py-2'>Date de sortie :</label>
-                    <input type="date" required ref={releaseDateRef} className='p-2 shadow'/>
+                    <label htmlFor="releaseDate" className='py-2 text-white'>Date de sortie :</label>
+                    <input type="date" required ref={releaseDateRef} className='p-2 shadow rounded'/>
                 </div>
                 <div className='appearance-none rounded w-full py-2 px-3 text-gray-700 flex flex-col items-start'>
-                    <label htmlFor="artist" className='py-2'>Artiste(s)</label>
-                    <input type="text" ref={artistRef} className='p-2 shadow'/>
+                    <label htmlFor="artist" className='py-2 text-white'>Artiste(s)</label>
+                    <input type="text" ref={artistRef} className='p-2 shadow rounded'/>
                 </div>
                 <div className='appearance-none rounded w-full py-2 px-3 text-gray-700 flex flex-col items-start'>
-                    <label htmlFor="score" className='py-2'>Notation de l'album (&#9734;) :</label>
-                    <input type="number" ref={scoreRef} className='p-2 shadow' min={1} max={5}/>
+                    <label htmlFor="score" className='py-2 text-white'>Notation de l'album (&#9734;) :</label>
+                    <input type="number" ref={scoreRef} className='p-2 shadow rounded' min={1} max={5}/>
                 </div>
                 <div className='appearance-none rounded w-full py-2 px-3 text-gray-700 flex flex-col items-start'>
-                    <label htmlFor="cover" className='py-2'>Image:</label>
-                    <input type="text"  ref={coverURLRef} className='p-2 shadow'/>
+                    <label htmlFor="cover" className='py-2 text-white'>Image:</label>
+                    <input type="text"  ref={coverURLRef} className='p-2 shadow rounded'/>
                 </div>
                 <div>
                     <button className="bg-cyan-500 rounded px-5 text-gray-50">Ajouter Album</button>

@@ -5,6 +5,8 @@ import axios from "axios";
 export const fetchAlbums = createAsyncThunk("albums/fetchAlbums", async () => {
     const response = await axios.get(`${BASE_DB_URL}eAlbums.json`);
     const albums = [];
+    const token = localStorage.getItem('token')
+    
 
     for (const key in response.data) {
         albums.push({ id: key, ...response.data[key] });
@@ -13,9 +15,9 @@ export const fetchAlbums = createAsyncThunk("albums/fetchAlbums", async () => {
     return albums;
 });
 
-export const createAlbum = createAsyncThunk(`albums/createAlbum`, async (newAlbum, { getState }) => {
-    const state = getState();
-    const token = state.auth.token; // Replace with your actual token source
+export const createAlbum = createAsyncThunk(`albums/createAlbum`, async (newAlbum) => {
+    
+    const token = localStorage.getItem('token')
     const response = await axios.post(`${BASE_DB_URL}/eAlbums.json?auth=${token}`, newAlbum);
 
     return {
