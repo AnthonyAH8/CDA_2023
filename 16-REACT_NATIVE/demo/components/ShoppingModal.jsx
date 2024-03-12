@@ -6,10 +6,8 @@ export default function ShoppingModal(props) {
     const [shopping, setShopping] = useState([]);
 
     function addNewFurniture(enteredInput) {
-            setShopping(enteredInput)
+        setShopping(enteredInput)
     }
-
-    
 
     return (
         <Modal visible={props.visible}>
@@ -49,7 +47,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    shoppingInput:{
+    shoppingInput: {
         margin: 20,
         borderWidth: 1,
         padding: 10,

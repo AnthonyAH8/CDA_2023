@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 // import SecondDemo from '../demo/components/SecondDemo'
 import ShoppingList from '../demo/components/ShoppingList'
+import Calculator from '../demo/components/Calculator'
 
 export default function App() {
     return (
@@ -21,8 +22,8 @@ export default function App() {
         //     </View>
         // </View>
         // <SecondDemo/>
-        // <Text>Hello</Text>
-        <ShoppingList/>
+        // <ShoppingList/>
+        <Calculator/>
     )
 }
 
