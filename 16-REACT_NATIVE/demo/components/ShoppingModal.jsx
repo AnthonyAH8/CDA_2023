@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 
 export default function ShoppingModal(props) {
     const [shoppingInput, setShoppingInput] = useState('');
-    const [shop, setShop] = useState([]);
+    const [shopping, setShopping] = useState([]);
 
-    function addNewFurniture() {
-            const newFurniture = { stuff: shoppingInput };
-            setShop([...shop, newFurniture]);
-            setShoppingInput('');
+    function addNewFurniture(enteredInput) {
+            setShopping(enteredInput)
     }
+
+    
 
     return (
         <Modal visible={props.visible}>
@@ -27,7 +27,7 @@ export default function ShoppingModal(props) {
                 />
                 <Button
                     title="Ajouter course"
-                    onPress={addNewFurniture}
+                    onPress={(addNewFurniture)}
                 />
             </View>
             <Button
