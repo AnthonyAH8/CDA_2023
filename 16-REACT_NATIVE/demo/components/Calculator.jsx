@@ -90,7 +90,7 @@ export default function Calculator() {
                 <Pressable
                 onPress={() => numberInput(0)}><Text style={styles.numbers}>0</Text></Pressable>
                 <Pressable
-                ><Text style={styles.numbers}>Del</Text></Pressable>
+                onPress={clear}><Text style={styles.numbers}>Del</Text></Pressable>
                 <Pressable
                 onPress={operation}><Text style={styles.elements}>=</Text></Pressable>
             </View>
