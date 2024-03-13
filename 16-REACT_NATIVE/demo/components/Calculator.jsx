@@ -26,14 +26,16 @@ export default function Calculator() {
     
         if (operator === '+') {
             setDisplayValue(a + b);
-        } else if (operator === '-') {
+        } else if (operator === '-'){
             setDisplayValue(a - b);
-        } else if (operator === '*') {
+        } else if (operator === '*'){
             setDisplayValue(a * b);
-        } else if (operator === '/') {
+        } else if (operator === '/'){
             setDisplayValue(a / b);
-        } else if (operator === '^') {
+        } else if (operator === '^'){
             setDisplayValue(Math.pow(a, b))
+        } else if(operator === '%') {
+            setDisplayValue(a % b)
         }
     
         setOperator(null);
@@ -55,7 +57,8 @@ export default function Calculator() {
                 <Pressable onPress={clear}><Text style={styles.elements}>AC</Text></Pressable>
                 <Pressable
                 onPress={() => answer('^')}><Text style={styles.elements}>^</Text></Pressable>
-                <Pressable><Text style={styles.elements}>%</Text></Pressable>
+                <Pressable
+                onPress={() => answer('%')}><Text style={styles.elements}>%</Text></Pressable>
                 <Pressable
                 onPress={() => answer('/')}><Text style={styles.elements}>/</Text></Pressable>
                 <Pressable
@@ -117,28 +120,28 @@ const styles = StyleSheet.create({
         display: 'flex',
         color: 'white',
         backgroundColor: 'grey',
-        width: 100,
-        height: 100,
+        width: 90,
+        height: 90,
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
-        padding: 32,
-        margin: 5,
+        padding: 28,
+        margin: 10,
         fontWeight: 'bold',
         fontSize: 24
     },
     numbers:{
         backgroundColor: 'white',
-        width: 100,
-        height: 100,
+        width: 90,
+        height: 90,
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
-        borderRadius: 50,
-        padding: 32,
-        margin: 5,
+        borderRadius: 45,
+        padding: 27,
+        margin: 10,
         fontWeight: 'bold',
         fontSize: 24
     },
