@@ -6,6 +6,12 @@ import FirstScreen from '../demo_stack/screens/FirstScreen'
 import SecondScreen from '../demo_stack/screens/SecondScreen'
 import ThirdScreen from '../demo_stack/screens/ThirdScreen'
 
+// Packages nécessaires navigation :
+// npm install @react-navigation/native
+// npm install react-native-screens react-native-safe-area-context
+// npm i @react-navigation/native-stack
+
+
 const Stack = createNativeStackNavigator()
 
 export default function App() {
