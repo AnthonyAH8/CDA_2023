@@ -1,3 +1,4 @@
+import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -10,6 +11,7 @@ const Header = () => {
             <div className="d-flex align-items-center align-center flex-column">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/769px-Pokebola-pokeball-png-0.png" alt="" width={30} />
                 <p>Mon Pokédex</p>
+                <Modal/>
             </div>
             <div className="d-flex align-items-center align-center gap-2">
                 <button className="btn btn-primary">Clear</button>

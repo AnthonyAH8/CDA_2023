@@ -37,7 +37,7 @@ const PokemonList = () => {
                     placeholder="Filtrer par type de pokémon"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="mx-5"
+                    className="mx-5 rounded-pill p-2"
                     />
                 <div className="d-flex justify-content-center flex-wrap gap-2">
                     {PokemonList &&
