@@ -1,18 +1,28 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { CATEGORIES } from '../data/data';
+import { CATEGORIES, MEALS } from '../data/data';
+
+const filterCategoriesAndMealsById = (categories, meals, categoryIds, mealIds) => {
+  const filteredCategories = categories.filter(category => categoryIds.includes(category.id));
+  const filteredMeals = meals.filter(meal => mealIds.includes(meal.id));
+  return { filteredCategories, filteredMeals };
+};
 
 export default function HomeRecette({ navigation }) {
+  const categoryId = CATEGORIES.map(category => category.id); 
+  const mealId = MEALS.map(meal => meal.id);
+
+  const { filteredCategories } = filterCategoriesAndMealsById(CATEGORIES, MEALS, categoryId, mealId);
+
   return (
     <View style={styles.container}>
       <FlatList
-        data={CATEGORIES}
+        data={filteredCategories}
         numColumns={2}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate("DetailsRecette", { category: item })}
-            style={styles.main}>
-              <View style={[styles.item,{ backgroundColor: item.color }]}>
+            <TouchableOpacity onPress={() => navigation.navigate("DetailsRecette", { category: item })} style={styles.main}>
+              <View style={[styles.item, { backgroundColor: item.color }]}>
                 <Text style={styles.category}>{item.title}</Text>
               </View>
             </TouchableOpacity>
@@ -29,7 +39,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
     },
-    item:{
+    item: {
         width: 160,
         height: 160,
         display: 'flex',
@@ -40,10 +50,10 @@ const styles = StyleSheet.create({
         margin: 20,
         borderRadius: 10,
     },
-    category:{
+    category: {
         color: 'white',
         fontWeight: 'bold',
         fontSize: 18,
         color: 'darkgrey'
     }
-})
+});
