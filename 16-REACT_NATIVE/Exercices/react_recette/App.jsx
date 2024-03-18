@@ -13,8 +13,8 @@ export default function App() {
     <NavigationContainer>
         <Tab.Navigator>
             <Tab.Screen name='HomeRecette' component={HomeRecette}/>
-            <Tab.Screen name='RecetteDetails' component={DetailsRecette}/>
-          <Tab.Screen name='DescriptionRecette' component={DescriptionRecette}/>
+            <Tab.Screen name='DetailsRecette' component={DetailsRecette}/>
+          {/* <Tab.Screen name='DescriptionRecette' component={DescriptionRecette}/> */}
         </Tab.Navigator>
     </NavigationContainer>
   )

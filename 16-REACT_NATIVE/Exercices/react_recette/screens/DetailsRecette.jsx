@@ -1,8 +1,8 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
 import { MEALS } from '../data/data'
 
 export default function DetailsRecette({ navigation }) {
+
   return (
     <View style={styles.container}>
       <FlatList

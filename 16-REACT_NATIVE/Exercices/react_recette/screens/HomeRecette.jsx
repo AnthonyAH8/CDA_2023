@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     category: {
-        color: 'white',
         fontWeight: 'bold',
         fontSize: 18,
         color: 'darkgrey'
