@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class racecar {
     public static void main(String[] args) {
-
 //        3. # Course de voitures simplifiée
 //
 //        - Objectif : Atteindre l'arrivée avant l'ordinateur en avançant basé sur les résultats d'un dé.
