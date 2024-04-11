@@ -21,18 +21,22 @@ public class double_temperatureKelvin {
     }
 
     public double getFahrenheit() {
+
         return fahrenheit;
     }
 
     public void setCelsius(double celsius) {
+
         this.celsius = celsius;
     }
 
     public void setKelvin(double kelvin) {
+
         this.kelvin = kelvin;
     }
 
     public void setFahrenheit(double fahrenheit) {
+
         this.fahrenheit = fahrenheit;
     }
 }
