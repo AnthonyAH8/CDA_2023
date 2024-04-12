@@ -36,9 +36,12 @@ public class Plante {
         this.color = color;
     }
 
-    public void informations() {
-        System.out.println("Nom de la plante : " + name);
-        System.out.println("Hauteur de la plante : " + height + " m");
-        System.out.println("Couleur des feuilles : " + color);
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ":\n" +
+                "------------\n" +
+                "Nom : " + name + "\n" +
+                "Hauteur : " + height + " m\n" +
+                "Couleur : " + color;
     }
 }
