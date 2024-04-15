@@ -6,9 +6,10 @@ public class MainChaise {
         
         Chaise chaise1 = new Chaise(2, "Bois", "Bleue"); 
 
-        Chaise chaise2 = new Chaise(3, "Métal", "Noir");
+        Chaise chaise2 = new Chaise(3, "Métal", "Noire");
         
         System.out.println(chaise1);
         System.out.println(chaise2);
     }
+
 }

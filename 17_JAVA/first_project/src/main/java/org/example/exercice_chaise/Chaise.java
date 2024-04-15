@@ -36,13 +36,13 @@ public class Chaise {
         this.couleur = couleur;
     }
 
-    @Override
+    @Override /** surcharger **/
     public String toString() {
         return getClass().getSimpleName() + ":\n" +
                 "------------\n" +
                 "Nombre de pieds = " + nbPieds + "\n" +
                 "Matériau = " + materiaux + "\n" +
-                "Mouleur = " + couleur
+                "Couleur = " + couleur
                 + "\n";
     }
 
