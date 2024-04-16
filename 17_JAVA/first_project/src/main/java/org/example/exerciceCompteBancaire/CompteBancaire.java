@@ -16,13 +16,14 @@ public abstract class CompteBancaire {
 
     public static void deposer(double montant) {
         double nouveauSolde = solde + montant;
-        solde(nouveauSolde);
+//        solde(nouveauSolde);
     }
+
 
     public static void retirer(double montant) {
         if (montant <= solde) {
             double nouveauSolde = solde - montant;
-            getSolde(nouveauSolde);
+//            getSolde(nouveauSolde);
         } else {
             System.out.println("Solde insuffisant pour effectuer le retrait.");
         }

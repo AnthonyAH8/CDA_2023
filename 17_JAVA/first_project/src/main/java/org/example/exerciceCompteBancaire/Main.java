@@ -22,7 +22,7 @@ public class Main {
 
             switch (choix) {
                 case 1:
-                    System.out.println("Solde actuel: " + CompteBancaire.solde());
+//                    System.out.println("Solde actuel: " + CompteBancaire.solde());
                     break;
                 case 2:
                     System.out.println("Entrez le montant à déposer:");
