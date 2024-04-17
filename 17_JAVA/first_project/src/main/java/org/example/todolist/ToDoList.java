@@ -34,12 +34,21 @@ public class ToDoList {
         }
     }
 
+    public void deleteTask(int index) {
+        if (index >= 0 && index < tasks.size()) {
+            tasks.remove(index);
+            System.out.println("Tâche supprimée avec succès.");
+        } else {
+            System.out.println("Index de tâche invalide.");
+        }
+    }
+
     public static void main(String[] args) {
         ToDoList toDoList = new ToDoList();
         Scanner scanner = new Scanner(System.in);
 
         while(true){
-            System.out.println("\n1: Ajouter tâche \n2: Marquer tâche comme accomplie \n3: Supprimer tâche \n0: Quitter");
+            System.out.println("\n1: Ajouter tâche \n2: Marquer tâche comme accomplie \n3: Voir les tâches \n4: Supprimer une tâche \n0: Quitter");
             System.out.println("Votre choix:");
 
             int choice = scanner.nextInt();
@@ -60,9 +69,15 @@ public class ToDoList {
                 case 3:
                     toDoList.displayTasks();
                     break;
-
+                case 4:
+                    System.out.println("Entrer un index de tâche à supprimer");
+                    int deleteTask = scanner.nextInt() - 1;
+                    toDoList.deleteTask(deleteTask);
+                    break;
                 case 0:
                     System.out.println("Au revoir");
+                    scanner.close();
+                    System.exit(0);
                     break;
 
                 default:
