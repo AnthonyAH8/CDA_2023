@@ -25,7 +25,7 @@ public class ToDoList {
 
     public void displayTasks(){
         if (tasks.isEmpty()){
-            System.out.println("Liste des tâches vide");
+            System.out.println("Liste vide");
         } else{
             System.out.println("To do List:");
             for (int i = 0; i < tasks.size(); i++) {
