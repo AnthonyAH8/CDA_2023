@@ -1,0 +1,46 @@
+Objectif: Déterminer le type de base de données le plus approprié (relationnelle ou non relationnelle) pour deux
+scénarios de projet distincts, en justifiant votre choix basé sur les caractéristiques et les besoins des projets.
+
+Scénario 1: Système de Gestion de Commandes pour une Entreprise
+
+Description : Une entreprise de commerce électronique requiert un système pour gérer ses commandes. Les
+données à gérer incluent les informations des clients, les détails des produits, les commandes, et les
+informations de livraison.
+
+Exigences Spécifiques :
+
+Les données sont hautement structurées et interconnectées (clients, produits, commandes).
+Besoin d'intégrité transactionnelle pour assurer la cohérence des données (par exemple, mise à jour des
+stocks après chaque commande).
+Les requêtes complexes (par exemple, historique des commandes d'un client) sont fréquentes.
+
+
+BDD : SGBBD Relationnel car les données sont liées entre elles et donc struturées. 
+Interaction forte entre entre les clients et les produits.
+Evite d'éventuels imprévus ou problèmes avec la BDD. 
+Facilité d'ajouter ou de supprimer les produits dans la BDD.
+
+
+Scénario 2: Application Mobile de Partage de Photos
+
+Description : Une application mobile en plein essor pour partager des photos et des vidéos. Les utilisateurs
+peuvent publier du contenu, suivre d'autres utilisateurs, et interagir via des commentaires et des likes.
+
+Exigences Spécifiques :
+Les données sont variées et incluent des images, des vidéos, des textes (commentaires), et des données
+d'utilisateur.
+
+Flexibilité nécessaire pour gérer des formats de données en constante évolution (nouveaux types de
+contenu, fonctionnalités).
+
+Scalabilité rapide et efficace pour gérer une augmentation rapide du nombre d'utilisateurs et de données.
+
+Tâche
+Analysez chaque scénario et déterminez quel type de base de données serait le plus approprié.
+Pour chaque scénario, justifiez votre choix en expliquant comment les caractéristiques du type de base de
+données sélectionné répondent aux besoins et aux défis spécifiques du projet.
+
+BDD : SGBD Non Relationnel car il y a la présence de commentaires. 
+Parfois, une publication peut n'avoir aucun commentaire et seulement du contenu. 
+De plus, l'application permet de partager des vidéos ou des photos avec des formats différents.
+La possibilité d'interaction avec la publication est multiple (likes ou commentaires).
