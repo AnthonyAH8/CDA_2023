@@ -1,6 +1,5 @@
 package org.example.societeTrading;
 
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -48,9 +47,9 @@ public class Main {
                 .distinct()
                 .collect(Collectors.toList());
 
-        System.out.println();
-
         System.out.println(cities);
+
+        System.out.println();
 
         traders.stream()
                 .map(Trader::getName)
@@ -63,16 +62,35 @@ public class Main {
                 .anyMatch(city -> city.getCity().equals("Milan")));
         System.out.println(traderMilan);
 
+        System.out.println();
+
         Optional<Integer> highestTransaction = transactions.stream()
                 .map(Transaction::getValue)
                 .max(Integer::compareTo);
 
         System.out.println(highestTransaction);
 
+        System.out.println();
+
         List<Trader> cambridgeTraders = traders.stream()
                 .filter(location -> location.getCity().equals("Cambridge"))
+                .sorted(Comparator.comparing(Trader::getName))
                 .toList();
         System.out.println(cambridgeTraders);
-    }
 
+        System.out.println();
+
+        List <Integer> tradersCambridge = transactions.stream()
+                .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
+                .map(Transaction::getValue)
+                .toList();
+        System.out.println(tradersCambridge);
+
+        System.out.println();
+
+        Optional<Transaction> lowValueTransaction = transactions.stream()
+                .min(Comparator.comparing(Transaction::getValue));
+        System.out.println(lowValueTransaction);
+
+    }
 }
