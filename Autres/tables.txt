@@ -1,6 +1,0 @@
-Client = nom, prénom, email, date_naissance, carte_fidelite
-Menu = ingredients, recette, prix, plat_du_jour
-Stock = fruits, legumes, aliments, nombre_aliments 
-Matériel = assiettes, couverts, tables, chaises
-Employes = nom, prenom, date_naissance, hierarchie_entreprise, anciennete_entreprise, salaire
-Réservation = moyen_reservation (appel ou en ligne), mode_paiement, date_reservation, nombre_personnes
