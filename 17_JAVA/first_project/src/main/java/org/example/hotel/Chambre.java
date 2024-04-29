@@ -1,6 +1,5 @@
 package org.example.hotel;
 
-//Une classe chambre (numéro, statut (Libre ou occupée), tarif, capacité)
 public class Chambre {
     private int numero;
     private boolean statut;

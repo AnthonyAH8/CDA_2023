@@ -1,7 +1,5 @@
 package org.example.hotel;
 
-import java.util.Date;
-
 public class Client {
     private int id;
     private String nom;
@@ -46,4 +44,5 @@ public class Client {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+    
 }
