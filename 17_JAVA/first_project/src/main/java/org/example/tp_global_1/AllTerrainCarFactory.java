@@ -1,14 +1,14 @@
-package org.example.tp_global_1;
+// package org.example.tp_global_1;
 
-public class AllTerrainCarFactory extends CarFactory{
+// public class AllTerrainCarFactory extends CarFactory{
 
-    public AllTerrainCarFactory createAllTerrainCarFactory(String name){
+//     public AllTerrainCarFactory createAllTerrainCarFactory(String name){
 
-        return new AllTerrainCarFactory();
-    }
+//         return new AllTerrainCarFactory();
+//     }
 
-    @Override
-    public ElectricCarFactory createCar(String name) {
-        return null;
-    }
-}
+//     @Override
+//     public ElectricCarFactory createCar(String name) {
+//         return null;
+//     }
+// }
