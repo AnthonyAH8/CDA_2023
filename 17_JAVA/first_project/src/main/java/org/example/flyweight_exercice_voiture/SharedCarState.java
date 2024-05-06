@@ -19,5 +19,4 @@ public class SharedCarState implements VehicleFlyWeight{
         System.out.println(model);
         System.out.println(year);
     }
-
 }
