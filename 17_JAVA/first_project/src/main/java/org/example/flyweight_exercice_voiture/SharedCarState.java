@@ -19,4 +19,13 @@ public class SharedCarState implements VehicleFlyWeight{
         System.out.println(model);
         System.out.println(year);
     }
+
+    @Override
+    public String toString() {
+        return "SharedCarState{" +
+                "color='" + color + '\'' +
+                ", model='" + model + '\'' +
+                ", year='" + year + '\'' +
+                '}';
+    }
 }

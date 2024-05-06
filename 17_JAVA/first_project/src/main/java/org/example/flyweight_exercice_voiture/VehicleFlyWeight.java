@@ -4,4 +4,3 @@ public interface VehicleFlyWeight {
     void vehiclesInfos(String vehicleType);
 
 }
-

@@ -15,4 +15,11 @@ public class CarFactory {
         return carweight.get(carKey);
     };
 
+    @Override
+    public String toString() {
+        return "CarFactory{" +
+                "carweight=" + carweight +
+                ", vehicleType='" + vehicleType + '\'' +
+                '}';
+    }
 }

@@ -22,7 +22,8 @@ public class Vehicle {
         return "Vehicle{" +
                 "color='" + color + '\'' +
                 ", model='" + model + '\'' +
-                ", year='" + year + '\'' + "}"
-                ;
+                ", year='" + year + '\'' +
+                ", vehicleFlyWeight=" + vehicleFlyWeight +
+                '}';
     }
 }

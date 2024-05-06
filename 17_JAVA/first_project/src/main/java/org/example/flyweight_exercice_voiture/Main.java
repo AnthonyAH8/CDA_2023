@@ -6,7 +6,8 @@ public class Main {
         Vehicle vehicle = new Vehicle("blue", "3008", "2018", carFactory.getcarWeight("blue", "Tesla", "2021"));
         System.out.println(vehicle);
 
-        Vehicle vehicle2 = new Vehicle("red", "tesla", "2022", carFactory.getcarWeight("blue", "Tesla", "2021"));
+        Vehicle vehicle2 = new Vehicle("red", "tesla", "2021", carFactory.getcarWeight("blue", "Tesla", "2021"));
         System.out.println(vehicle2);
     }
+
 }
