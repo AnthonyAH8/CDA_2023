@@ -6,18 +6,29 @@ import java.util.Scanner;
 
 public class Ihm {
     private Scanner scanner;
-    private IngredientDao ingredientDao;
 
     public Ihm(){
-        this.scanner = scanner;
-        ingredientDao = new IngredientDao();
+        this.scanner = new Scanner(System.in);
     }
 
-    public void startIngredient(){
+    public void start(){
         int entry;
         while(true){
             System.out.println("Application de gestion de recette");
+            System.out.println("1.Menu recettes");
+            // TODO suite menu principal
+            entry = scanner.nextInt();
+            scanner.nextLine();
 
+            switch (entry){
+                case 1:
+                    RecetteIhm recetteIhm = new RecetteIhm(scanner);
+                    recetteIhm.start();
+                    break;
+                // TODO suite menu principal
+                default:
+                    return;
+            }
         }
     }
 }

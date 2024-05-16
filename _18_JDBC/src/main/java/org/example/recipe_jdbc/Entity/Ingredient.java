@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class Ingredient {
-    private int id;
-    private String nom;
+    private int id_ingredient;
+    private String nom_ingredient;
 }

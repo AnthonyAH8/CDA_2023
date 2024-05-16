@@ -21,16 +21,21 @@ public abstract class BaseDao<T> {
     public abstract List <T> get() throws SQLException;
 
     protected void close () throws SQLException{
-        if(!resultSet.isClosed()){
-            resultSet.close();
+        try {
+            if (resultSet != null && !resultSet.isClosed()) {
+                resultSet.close();
+            }
+
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+    } catch (SQLException exception){
+            System.out.println(exception);
         }
 
-        if(!preparedStatement.isClosed()){
-            preparedStatement.close();
-        }
-        if (!connection.isClosed()){
-            connection.close();
-        }
     }
-
 }
