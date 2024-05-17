@@ -78,5 +78,13 @@ public class RecetteIngredientDao extends BaseDao<RecetteIngredient> {
         }
         return recetteIngredients;
     }
+
+    public List<RecetteIngredient> getId_recette_ingredient(int recetteId) {
+        throw new UnsupportedOperationException("Unimplemented method 'getId_recette_ingredient'");
+    }
+
+    public List<RecetteIngredient> getByRecetteId(int recetteId) {
+        throw new UnsupportedOperationException("Unimplemented method 'getByRecetteId'");
+    }
 }
 

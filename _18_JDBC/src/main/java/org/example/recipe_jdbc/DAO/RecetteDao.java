@@ -33,7 +33,6 @@ public class RecetteDao extends BaseDao <Recette> {
             return element;
         } catch (SQLException exception) {
             System.out.println(exception.getMessage());
-            connection.rollback();
             return null;
         }finally {
             close();
