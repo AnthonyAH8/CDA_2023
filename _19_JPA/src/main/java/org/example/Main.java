@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Entity.Carburant;
 import org.example.Entity.Cars;
 
 import javax.persistence.*;
@@ -12,11 +13,16 @@ public class Main {
         emf = Persistence.createEntityManagerFactory("jpa_demo");
         EntityManager em = emf.createEntityManager();
 
+        Carburant carburant = Carburant.builder().
+                carburant("Electrique")
+                .build();
+
         Cars car2 = Cars.builder()
                 .marque("Toyota")
                 .modele("Supra")
                 .date(2002)
                 .color("Verte")
+                .carburant(carburant)
                 .build();
 
         em.getTransaction().begin();
