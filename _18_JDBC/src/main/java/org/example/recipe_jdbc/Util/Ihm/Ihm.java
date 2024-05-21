@@ -13,7 +13,7 @@ public class Ihm {
     public void start() throws SQLException{
         int entry;
         while(true){
-            System.out.println("Application de gestion de recette");
+            System.out.println("Application de gestion de recettes");
             System.out.println("1.Menu recettes");
             System.out.println("2.Menu ingrédients");
             System.out.println("3.Menu étapes");
