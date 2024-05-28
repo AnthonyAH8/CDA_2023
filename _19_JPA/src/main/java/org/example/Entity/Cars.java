@@ -21,6 +21,8 @@ public class Cars {
     private String modele;
     private int date;
     private String color;
-    @Embedded
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_carburant")
     private Carburant carburant;
 }

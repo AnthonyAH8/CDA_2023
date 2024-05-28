@@ -8,7 +8,14 @@
             Ici je peux mettre la description de mon fichier persistence.xml
         </description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>org.example.Entity.Cars</class>
+<!--        <class>org.example.Entity.Cars</class>-->
+<!--        <class>org.example.Entity.Carburant</class>-->
+        <class>org.example.tp_computer.Entity.Computer</class>
+        <class>org.example.tp_computer.Entity.Identifiant</class>
+        <class>org.example.tp_computer.Entity.OperatingSystem</class>
+        <class>org.example.tp_computer.Entity.Processor</class>
+        <class>org.example.tp_billetterie.Entity.Billetterie</class>
+
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_demo"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
@@ -16,6 +23,7 @@
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>

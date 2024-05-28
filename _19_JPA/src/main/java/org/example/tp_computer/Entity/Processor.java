@@ -1,4 +1,4 @@
-package org.example.Entity;
+package org.example.tp_computer.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,18 +8,16 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Data
 @Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Embeddable
 
-public class Carburant {
+public class Processor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_carburant")
+    @Column(name = "id_processor")
     private int id;
-    private String carburant;
-    @OneToOne(mappedBy = "carburant", fetch = FetchType.LAZY)
-    private Cars cars;
+    private String name;
+
 }
