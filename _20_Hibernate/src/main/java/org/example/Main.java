@@ -234,11 +234,10 @@ public class Main {
 
 //        4. Afficher les produits ave une note de 4 ou plus.
 
-        Query query9 = session.createQuery("from Product as p join Commentaire c on c.products group by p having avg(c.note) >= :note1");
+        Query query9 = session.createQuery("select p from Product as p join Commentaire c on c.products group by p having avg(c.note) >= :note1");
         query9.setParameter("note1", 4);
         List<Product> product9 = query9.list();
         for (Product list9 : product9){
-            System.out.println(list9.getMarque());
             System.out.println(list9);
         }
 
