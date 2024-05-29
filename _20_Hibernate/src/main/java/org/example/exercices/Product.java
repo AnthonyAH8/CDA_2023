@@ -1,5 +1,8 @@
 package org.example.exercices;
 
+import org.example.exercices.entities.Commentaire;
+import org.example.exercices.entities.Image;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,6 +24,14 @@ public class Product {
     private double prix;
     @Column(name = "stock")
     private int stock;
+
+    @ManyToOne
+    @JoinColumn(name = "images_id")
+    private Image image;
+
+    @ManyToOne
+    @JoinColumn(name = "commentaire_id")
+    private Commentaire commentaire;
 
     public Long getId() {
         return id;
@@ -68,7 +79,24 @@ public class Product {
     }
 
     public void setStock(int stock) {
+
         this.stock = stock;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public Commentaire getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(Commentaire commentaire) {
+        this.commentaire = commentaire;
     }
 
     @Override
