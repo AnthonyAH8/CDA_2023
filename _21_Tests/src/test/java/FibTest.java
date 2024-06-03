@@ -18,7 +18,7 @@ public class FibTest {
     public void Fib_contains_0(){
         fib = new Fib(0);
         List<Integer> fib_1 = fib.getFibSeries();
-        Assert.assertEquals(fib_1.size(), 2);
+        Assert.assertTrue(fib_1.contains(0));
     }
 
     @Test
