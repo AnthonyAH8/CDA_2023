@@ -36,8 +36,17 @@ public class RechercheVilleTest {
 
     @Test
     public void any_Case(){
-        List<String> cities = new ArrayList<>();
 
-        String value = (char)
     }
+
+    @Test
+    public void searchByLetters(){
+
+    }
+
+    @Test
+    public void allCities(){
+
+    }
+
 }
