@@ -9,10 +9,10 @@
 <html>
 <head>
     <title>Title</title>
+    <%@include file="WEB-INF/bootstrap.min.css.html"%>
 </head>
 <body>
     <h1 class="text-success">${message}</h1>
     <%@include file="WEB-INF/madiv.html" %>
-    <%@include file="WEB-INF/bootstrap.min.css.jsp"%>
 </body>
 </html>

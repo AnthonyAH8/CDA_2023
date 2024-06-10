@@ -9,9 +9,10 @@
 <html>
 <head>
     <title>Page 4</title>
+    <%@include file="WEB-INF/bootstrap.min.css.html"%>
 </head>
 <body>
-    <h2>Ma page 4</h2>
+    <h2 class="text-warning">Ma page 4</h2>
     <p>${message}</p>
 </body>
 </html>
