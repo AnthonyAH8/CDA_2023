@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/style.css">
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">--%>
 </head>
 <body>
 <h1><%= "Hello World!" %>
@@ -15,5 +17,9 @@
 <a href="page2">Page 2</a>
 <br/>
 <a href="page3">Page 3</a>
+<br/>
+<a href="page4">Page 4</a>
+<br/>
+<a href="page5">Page 5</a>
 </body>
 </html>

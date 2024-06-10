@@ -1,0 +1,14 @@
+html, body{
+    background-color: #40E0D0;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+}
+
+h1{
+    color: darkviolet;
+}
+
+a{
+    text-decoration: none;
+    color: #A020F0;
+}
