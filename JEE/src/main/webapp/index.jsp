@@ -21,5 +21,7 @@
 <a href="page4">Page 4</a>
 <br/>
 <a href="page5">Page 5</a>
+<br>
+<a href="variableservlet">Variable</a>
 </body>
 </html>
