@@ -7,12 +7,31 @@
 </head>
 <body>
     <h1>Liste de personnes </h1>
-    <div>
-        <%
+    <table class="table">
+        <thead>
+        <tr>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Age</th>
+        </tr>
+        </thead>
+        <tbody>
+            <%
             Iterable<Person> persons = (Iterable<Person>) request.getAttribute("persons");
-            for (Person p : persons){ %>
-            <li> <%= p.getPrenom() %> <%= p.getNom() %> <%= p.getAge() %></li>
-        <% } %>
-    </div>
+            if (persons != null) {
+                for (Person p : persons) {
+        %>
+        <tr>
+            <td><%= p.getPrenom() %></td>
+            <td><%= p.getNom() %></td>
+            <td><%= p.getAge() %></td>
+        </tr>
+            <%
+                }
+            }
+        %>
+
+        </tbody>
+    </table>
 </body>
 </html>
