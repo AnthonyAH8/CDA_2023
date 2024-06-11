@@ -13,12 +13,19 @@ import java.util.List;
 @WebServlet(name = "personne", value = "/personne")
 public class Personne extends HttpServlet {
 
+    private List<Person> persons;
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void init() throws ServletException {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("toto", "titi", 30));
         persons.add(new Person("tata", "titi", 25));
         persons.add(new Person("john", "doe", 33));
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         req.setAttribute("persons", persons);
         getServletContext().getRequestDispatcher("/personne.jsp").forward(req, resp);
     }
