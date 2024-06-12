@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @WebServlet(name = "DogServlet", value = "/dog")
 public class DogServlet extends HttpServlet {
@@ -21,12 +20,8 @@ public class DogServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         dog = new ArrayList<>();
-        UUID uuid = UUID.randomUUID();
-        UUID uuid2 = UUID.randomUUID();
         LocalDate dob = LocalDate.of(2020, 3, 12);
         LocalDate dob2 = LocalDate.of(2018, 12, 4);
-        dog.add(new Dogs(uuid, "Milou", "bichon", dob));
-        dog.add(new Dogs(uuid2, "Clifford", "gros chien", dob2));
     }
 
     @Override

@@ -3,60 +3,49 @@ package org.example.exercice_gestion_chien.service;
 import org.example.exercice_gestion_chien.entity.Dogs;
 import org.example.exercice_gestion_chien.interfaces.Repository;
 import org.hibernate.Query;
+import org.hibernate.Session;
 
 import java.util.List;
 
-public class DogService extends BaseService implements Repository<Dogs> {
+import static org.example.exercice_gestion_chien.util.HibernateSession.sessionFactory;
 
-    public DogService(){
-        super();
+public class DogService extends Repository<Dogs> {
+
+    public DogService(Session session) {
+        super(session);
     }
 
     @Override
     public boolean create(Dogs o) {
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.save(o);
-        session.getTransaction().commit();
-        session.close();
         return true;
     }
 
     @Override
     public boolean update(Dogs o) {
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.update(o);
-        session.getTransaction().commit();
-        session.close();
         return true;
     }
 
     @Override
     public boolean delete(Dogs o) {
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.delete(o);
-        session.getTransaction().commit();
-        session.close();
         return true;
     }
 
     @Override
     public Dogs findById(int id) {
-        session = sessionFactory.openSession();
-        Dogs dogs = session.get(Dogs.class,id);
+        Session session = sessionFactory.openSession();
+        Dogs dog = session.get(Dogs.class, id);
         session.close();
-        return dogs;
+        return dog;
     }
 
     @Override
     public List<Dogs> findAll() {
-        List<Dogs> dogsList = null;
-        session = sessionFactory.openSession();
-        Query<Dogs> dogsQuery = session.createQuery("from Dogs");
-        dogsList = dogsQuery.list();
+        Session session = sessionFactory.openSession();
+        Query<Dogs> query = session.createQuery("from Dogs");
+        List<Dogs> dogs = query.list();
         session.close();
-        return dogsList;
+        return dogs;
     }
+}
+
 }

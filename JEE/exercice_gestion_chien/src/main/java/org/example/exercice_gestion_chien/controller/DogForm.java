@@ -18,8 +18,6 @@ public class DogForm extends HttpServlet {
 
     private List<Dogs> dogs;
 
-    private static final java.util.UUID UUID = java.util.UUID.randomUUID();
-
     @Override
     public void init() throws ServletException {
         dogs = new ArrayList<>();
@@ -39,7 +37,7 @@ public class DogForm extends HttpServlet {
         String race = req.getParameter("race");
         LocalDate birthdate = LocalDate.parse(req.getParameter("birthdate"));
 
-        dogs.add(new Dogs(uuid, name, race, birthdate));
+        dogs.add(new Dogs(name, race, birthdate));
         req.setAttribute("dogs", dogs);
         getServletContext().getRequestDispatcher("/WEB-INF/dogForm.jsp").forward(req, resp);
 
