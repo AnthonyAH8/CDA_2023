@@ -1,0 +1,23 @@
+package org.example.exercice_gestion_produits.repository;
+
+import org.example.exercice_gestion_produits.model.Product;
+import org.hibernate.Session;
+
+import java.util.List;
+
+public class ProductRepository extends Repository<Product> {
+
+    public ProductRepository(Session session) {
+        super(session);
+    }
+
+    @Override
+    public Product findById(int id) {
+        return (Product) _session.get(Product.class,id);
+    }
+
+    @Override
+    public List<Product> findAll() {
+        return _session.createQuery("from Product ").list();
+    }
+}
