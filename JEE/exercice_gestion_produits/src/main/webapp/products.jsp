@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrateur
-  Date: 13/06/2024
-  Time: 13:56
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,7 +7,7 @@
 <body>
     <h1>Liste des produits</h1>
 <main>
-    <form action="post" method="products">
+    <form action="products" method="post">
         <div class="container">
             <div>
                 <label for="brand">Marque : </label>

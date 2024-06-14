@@ -1,4 +1,4 @@
-package org.example.exercice_gestion_produits.model;
+package main.java.org.example.exercice_gestion_produits.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

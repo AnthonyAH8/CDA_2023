@@ -1,7 +1,7 @@
-package org.example.exercice_gestion_produits.service;
+package main.java.org.example.exercice_gestion_produits.service;
 
-import org.example.exercice_gestion_produits.model.User;
-import org.example.exercice_gestion_produits.repository.UserRepository;
+import main.java.org.example.exercice_gestion_produits.model.User;
+import main.java.org.example.exercice_gestion_produits.repository.UserRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 

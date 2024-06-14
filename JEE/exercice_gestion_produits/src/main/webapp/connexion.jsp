@@ -16,7 +16,7 @@
     <main>
         <div>
             <h1>Se connecter</h1>
-            <form action="authentication" method="post">
+            <form action="connexion" method="post">
                 <div>
                     <label for="username">Nom utilisateur</label>
                     <input type="text" name="username" id="username">

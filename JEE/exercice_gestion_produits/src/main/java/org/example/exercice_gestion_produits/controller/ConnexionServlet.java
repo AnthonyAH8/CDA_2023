@@ -1,4 +1,4 @@
-package org.example.exercice_gestion_produits.controller;
+package main.java.org.example.exercice_gestion_produits.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.example.exercice_gestion_produits.model.User;
+
 
 import java.io.IOException;
 

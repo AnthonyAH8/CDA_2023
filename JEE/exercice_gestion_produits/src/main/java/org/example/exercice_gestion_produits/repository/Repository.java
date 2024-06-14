@@ -1,6 +1,5 @@
-package org.example.exercice_gestion_produits.repository;
+package main.java.org.example.exercice_gestion_produits.repository;
 
-import org.example.exercice_gestion_produits.model.Product;
 import org.hibernate.Session;
 
 import java.util.List;
@@ -24,7 +23,7 @@ public abstract class Repository<T>{
         _session.delete(o);
     }
 
-    abstract T findById(int id);
+    public abstract T findById(int id);
 
-    abstract List<T> findAll();
+    protected abstract List<T> findAll();
 }

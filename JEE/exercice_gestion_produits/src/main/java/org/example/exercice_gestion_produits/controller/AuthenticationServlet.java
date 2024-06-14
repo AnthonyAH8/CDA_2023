@@ -1,4 +1,4 @@
-package org.example.exercice_gestion_produits.controller;
+package main.java.org.example.exercice_gestion_produits.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.example.exercice_gestion_produits.model.User;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,9 +17,10 @@ public class AuthenticationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        String mail = req.getParameter("email");
 
 
-        if ("user".equals(username) && "password".equals(password)) {
+        if ("user".equals(username) && "password".equals(password) && "mail".equals(mail)) {
             HttpSession session = req.getSession();
             session.setAttribute("authenticatedUser", username);
             session.setAttribute("isLogged", true);
