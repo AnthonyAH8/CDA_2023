@@ -22,7 +22,7 @@ public class CarRessource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Car> carList(){
         List <Car> cars = new ArrayList<>();
-        cars.add(new Car(1, "Nissan", new Date(2020, 10, 10), "red"));
+        cars.add(new Car(2, "Nissan", new Date(2020, 10, 10), "red"));
         return cars;
     }
 }
