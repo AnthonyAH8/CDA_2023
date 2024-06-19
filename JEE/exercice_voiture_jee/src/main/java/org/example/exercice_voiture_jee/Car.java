@@ -13,7 +13,7 @@ public class Car {
 
     private String color;
 
-    public Car(int id, String nissan, Date date, String blue){
+    public Car(int id, String nissan, Date date, String blue) {
     }
 
     public Car(int id, String marque, LocalDate manufacturedAt, String color) {

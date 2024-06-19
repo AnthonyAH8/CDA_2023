@@ -14,14 +14,14 @@ public class CarRessource {
     @GET
     @Path("/one")
     @Produces(MediaType.APPLICATION_JSON)
-    public Car getFirstCar(){
+    public Car getFirstCar() {
         return new Car(1, "Nissan", new Date(2020, 10, 10), "blue");
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Car> carList(){
-        List <Car> cars = new ArrayList<>();
+    public List<Car> carList() {
+        List<Car> cars = new ArrayList<>();
         cars.add(new Car(2, "Nissan", new Date(2020, 10, 10), "red"));
         return cars;
     }
