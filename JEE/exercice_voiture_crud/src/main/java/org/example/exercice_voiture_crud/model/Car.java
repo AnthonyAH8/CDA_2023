@@ -1,10 +1,9 @@
-package org.example.exercice_voiture_jee;
+package org.example.exercice_voiture_crud.model;
 
 public class Car {
-
     private int id;
 
-    private String marque;
+    private String brand;
 
     private int manufacturedAt;
 
@@ -15,7 +14,7 @@ public class Car {
 
     public Car(int id, String marque, int manufacturedAt, String color) {
         this.id = id;
-        this.marque = marque;
+        this.brand = marque;
         this.manufacturedAt = manufacturedAt;
         this.color = color;
     }
@@ -29,11 +28,11 @@ public class Car {
     }
 
     public String getMarque() {
-        return marque;
+        return brand;
     }
 
     public void setMarque(String marque) {
-        this.marque = marque;
+        this.brand = marque;
     }
 
     public int getManufacturedAt() {
