@@ -1,6 +1,7 @@
 package org.example.exercice_voiture_jee;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Car {
 
@@ -12,7 +13,7 @@ public class Car {
 
     private String color;
 
-    public Car(){
+    public Car(int id, String nissan, Date date, String blue){
     }
 
     public Car(int id, String marque, LocalDate manufacturedAt, String color) {
