@@ -14,7 +14,20 @@
 </head>
 <body>
 <main>
-//TODO
+    <div class="container d-flex flex-column justify-content-center h-100 w-50">
+        <form action="addConsultation" method="post">
+            <div class="mb-3">
+                <label for="consultationDate" class="form-label">Date :</label>
+                <input type="date" class="form-control" id="consultationDate" name="consultationDate">
+            </div>
+
+            <div class="mb-3">
+                <label for="doctor" class="form-label">Nom du docteur :</label>
+                <input type="text" class="form-control" id="doctor" name="doctor">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
 </main>
 </body>
 </html>

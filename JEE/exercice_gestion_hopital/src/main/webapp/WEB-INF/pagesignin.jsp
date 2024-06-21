@@ -21,8 +21,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="profilePic" class="form-label">Mot de passe :</label>
-            <input type="file" class="form-control" id="profilePic" name="profilePic" accept="image/png, image/jpeg">
+            <label for="password" class="form-label">Mot de passe :</label>
+            <input type="password" class="form-control" id="password" name="password">
         </div>
 
         <button type="submit" class="btn btn-primary">Se connecter</button>
