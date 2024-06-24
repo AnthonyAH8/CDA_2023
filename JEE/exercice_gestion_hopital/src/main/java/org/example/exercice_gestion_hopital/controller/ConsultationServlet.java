@@ -33,7 +33,19 @@ public class ConsultationServlet extends HttpServlet {
 
             switch (choice){
                 case "/addconsultation":
+                    addConsultation(req, resp);
                     break;
+                case "/showconsultation":
+                    showConsultation(req, resp);
+                    break;
+                case "/deleteconsultation":
+                    deleteConsultation(req, resp);
+                    break;
+                case "/listconsultation":
+                    listConsultation(req, resp);
+                    break;
+                default:
+                    resp.sendRedirect("index.jsp");
             }
         }
     }
@@ -51,4 +63,35 @@ public class ConsultationServlet extends HttpServlet {
         }
         request.getRequestDispatcher("/WEB-INF/addConsultation.jsp").forward(request, response);
     }
+
+    private void showConsultation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        if (request.getParameter("id") != null){
+            int id = Integer.parseInt(request.getParameter("id"));
+            Consultation consultation = consultationService.findById(id);
+            request.setAttribute("consultation", consultation);
+            request.getRequestDispatcher("/WEB-INF/showconsultation.jsp").forward(request, response);
+        }else{
+            request.setAttribute("consultation", consultationService.findAll());
+            request.getRequestDispatcher("/WEB-INF/showconsultation.jsp").forward(request, response);
+
+        }
+    }
+
+    private void deleteConsultation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        int id = Integer.parseInt(request.getParameter("id"));
+        Consultation consultation = consultationService.findById(id);
+        if (consultation != null){
+            consultationService.delete(id);
+        }
+        else{
+            request.getRequestDispatcher("/WEB-INF/showconsultation.jsp").forward(request, response);
+
+        }
+    }
+
+    private void listConsultation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        request.setAttribute("consultation", consultationService.findById(Integer.parseInt("id")));
+        request.getRequestDispatcher("/WEB-INF/showconsultation.jsp").forward(request, response);
+    }
+
 }
