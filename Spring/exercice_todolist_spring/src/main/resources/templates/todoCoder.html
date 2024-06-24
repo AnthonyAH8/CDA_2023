@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Coder</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-primary">
+<div class="container mt-5 bg-danger rounded-lg text-white p-5 text-center">
+    <h1>Coder</h1>
+    <p>Titre : <span th:text="${name}"></span></p>
+    <p>Description : <span th:text="${description}"></span></p>
+    <p>Statut : <span th:text="${isDone}"></span></p>
+</div>
+</body>
+</html>
