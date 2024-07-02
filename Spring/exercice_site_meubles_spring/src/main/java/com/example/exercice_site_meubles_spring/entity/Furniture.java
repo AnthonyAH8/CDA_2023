@@ -24,6 +24,6 @@ public class Furniture {
 
     private Double price;
 
-    private String stock;
+    private int stock;
 
 }

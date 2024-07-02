@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class FurnitureService implements FurnitureServiceInterface {
 
-    private FurnitureRepository furnitureRepository;
+    private final FurnitureRepository furnitureRepository;
 
     @Autowired
     public FurnitureService(FurnitureRepository furnitureRepository) {
@@ -24,8 +24,7 @@ public class FurnitureService implements FurnitureServiceInterface {
 
     @Override
     public Furniture saveFurniture(Furniture furniture) {
-        Furniture furnitureSaved = furnitureRepository.save(furniture);
-        return furnitureSaved;
+        return furnitureRepository.save(furniture);
     }
 
     @Override
