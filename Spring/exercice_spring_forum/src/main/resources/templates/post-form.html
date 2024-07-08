@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un message</title>
+    <th:block th:replace="~{login :: bootstrapImports}"></th:block>
+</head>
+<body class="container">
+<h1 class="mt-5">Créer un message</h1>
+<form method="post" th:object="${post}" th:action="@{/addPost}" class="form-group">
+    <div class="mb-3">
+        <label for="content" class="form-label">Commentaire :</label>
+        <input type="text" id="content" th:field="*{content}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="creationDate" class="form-label">Posté le :</label>
+        <input type="datetime-local" id="creationDate" th:field="*{creationDate}" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter commentaire</button>
+</form>
+</body>
+</html>
