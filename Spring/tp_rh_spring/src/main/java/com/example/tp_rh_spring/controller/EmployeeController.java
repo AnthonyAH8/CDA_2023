@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8080/employees")
 @RestController
 @RequestMapping("/rh")
 public class EmployeeController {
@@ -30,18 +30,18 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees/add")
-    public ResponseEntity<EmployeeDtoGet> addEmployee(@Validated @RequestBody EmployeeDtoPost employeeDtoPost) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.create(employeeDtoPost));
+    public ResponseEntity<EmployeeDtoGet> addEmployee(@Validated EmployeeDtoPost employeeDtoPost) {
+       return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.create(employeeDtoPost));
     }
 
     @PutMapping("/employees/update/{id}")
-    public ResponseEntity<EmployeeDtoGet> updateEmployee(@PathVariable int id, @Validated @RequestBody EmployeeDtoPost employeeDtoPost) {
+    public ResponseEntity<EmployeeDtoGet> updateEmployee(@PathVariable int id, @Validated EmployeeDtoPost employeeDtoPost) {
         return ResponseEntity.ok(employeeService.update(id, employeeDtoPost));
     }
 
     @DeleteMapping("/employees/delete/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable int id) {
         employeeService.delete(id);
-        return ResponseEntity.ok("Employé " + id + "supprimé");
+        return ResponseEntity.ok("Employé " + id + " supprimé");
     }
 }

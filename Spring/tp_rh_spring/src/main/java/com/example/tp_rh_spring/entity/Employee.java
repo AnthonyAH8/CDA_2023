@@ -19,19 +19,16 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
     private String identificationNumber;
-    private String adress;
+    private String address;
+
     private String email;
     private String phoneNumber;
 
-    @Temporal(TemporalType.DATE)
     private LocalDate dateOfBirth;
-
-    @Temporal(TemporalType.DATE)
     private LocalDate contractStart;
-
-    @Temporal(TemporalType.DATE)
     private LocalDate contractEnd;
 
     private String occupation;

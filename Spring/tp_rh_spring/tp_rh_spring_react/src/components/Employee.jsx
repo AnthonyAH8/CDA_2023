@@ -62,12 +62,12 @@ function Employee() {
       }
     } catch (error) {
       console.error('Erreur:', error);
-      setSubmitStatus('Erreur.');
+      setSubmitStatus('Erreur statut.');
     }
   };
 
   return (
-    <div className='container'>
+    <div className='container mt-3'>
       <h1>Liste des employés</h1>
 
       <form onSubmit={handleSubmit} className='form form-control d-flex flex-column' method='post'>

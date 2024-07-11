@@ -16,10 +16,11 @@ import java.util.stream.Collectors;
 @Service
 public class EmployeeService implements BaseService<EmployeeDtoPost, EmployeeDtoGet> {
 
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Override
     public EmployeeDtoGet findById(int id) {
@@ -38,15 +39,16 @@ public class EmployeeService implements BaseService<EmployeeDtoPost, EmployeeDto
 
     @Override
     public EmployeeDtoGet create(EmployeeDtoPost employeeDtoPost) {
+
         Employee employee = Employee.builder()
                 .name(employeeDtoPost.getName())
                 .identificationNumber(employeeDtoPost.getIdentificationNumber())
-                .adress(employeeDtoPost.getAddress())
+                .address(employeeDtoPost.getAddress())
                 .phoneNumber(employeeDtoPost.getPhoneNumber())
                 .email(employeeDtoPost.getEmail())
-                .dateOfBirth(LocalDate.parse(employeeDtoPost.getDateOfBirth(), formatter))
-                .contractStart(LocalDate.parse(employeeDtoPost.getContractStart(), formatter))
-                .contractEnd(LocalDate.parse(employeeDtoPost.getContractEnd(), formatter))
+//                .dateOfBirth(LocalDate.parse(employeeDtoPost.getDateOfBirth(), formatter))
+//                .contractStart(LocalDate.parse(employeeDtoPost.getContractStart(), formatter))
+//                .contractEnd(LocalDate.parse(employeeDtoPost.getContractEnd(), formatter))
                 .occupation(employeeDtoPost.getOccupation())
                 .admin(employeeDtoPost.isAdmin())
                 .salary(employeeDtoPost.getSalary())
@@ -62,12 +64,12 @@ public class EmployeeService implements BaseService<EmployeeDtoPost, EmployeeDto
         Employee employee = optionalEmployee.get();
         employee.setName(employeeDtoPost.getName());
         employee.setIdentificationNumber(employeeDtoPost.getIdentificationNumber());
-        employee.setAdress(employeeDtoPost.getAddress());
+        employee.setAddress(employeeDtoPost.getAddress());
         employee.setPhoneNumber(employeeDtoPost.getPhoneNumber());
         employee.setEmail(employeeDtoPost.getEmail());
-        employee.setDateOfBirth(LocalDate.parse(employeeDtoPost.getDateOfBirth(), formatter));
-        employee.setContractStart(LocalDate.parse(employeeDtoPost.getContractStart(), formatter));
-        employee.setContractEnd(LocalDate.parse(employeeDtoPost.getContractEnd(), formatter));
+//        employee.setDateOfBirth(LocalDate.parse(employeeDtoPost.getDateOfBirth(), formatter));
+//        employee.setContractStart(LocalDate.parse(employeeDtoPost.getContractStart(), formatter));
+//        employee.setContractEnd(LocalDate.parse(employeeDtoPost.getContractEnd(), formatter));
         employee.setOccupation(employeeDtoPost.getOccupation());
         employee.setAdmin(employeeDtoPost.isAdmin());
         employee.setSalary(employeeDtoPost.getSalary());
@@ -88,7 +90,7 @@ public class EmployeeService implements BaseService<EmployeeDtoPost, EmployeeDto
                 .id(employee.getId())
                 .name(employee.getName())
                 .identificationNumber(employee.getIdentificationNumber())
-                .address(employee.getAdress())
+                .address(employee.getAddress())
                 .phoneNumber(employee.getPhoneNumber())
                 .email(employee.getEmail())
                 .dateOfBirth(employee.getDateOfBirth())

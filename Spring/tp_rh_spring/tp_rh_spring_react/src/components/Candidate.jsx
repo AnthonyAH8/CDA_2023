@@ -64,7 +64,7 @@ function Candidate() {
   };
 
   return (
-    <div className='container'>
+    <div className='container mt-3'>
       <h1>Liste des candidats</h1>
       <form onSubmit={handleSubmit} className='form form-control d-flex flex-column'>
         <div className='my-2'>

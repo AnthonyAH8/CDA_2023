@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 
 @Data
 @Builder
@@ -20,7 +19,9 @@ public class EmployeeDtoPost {
     private String phoneNumber;
     @Pattern(regexp = "([0-9]+(-[0-9]+)+)")
     private String dateOfBirth;
+    @Pattern(regexp = "([0-9]+(-[0-9]+)+)")
     private String contractStart;
+    @Pattern(regexp = "([0-9]+(-[0-9]+)+)")
     private String contractEnd;
     private String occupation;
     private String password;
