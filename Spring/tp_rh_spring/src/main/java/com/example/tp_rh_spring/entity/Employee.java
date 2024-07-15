@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -36,4 +37,8 @@ public class Employee {
     private boolean admin;
     private double salary;
     private String observation;
+
+    @OneToMany(mappedBy = "employee",cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Vacation> vacationList;
 }
