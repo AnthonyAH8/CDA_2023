@@ -1,6 +1,6 @@
-package com.example.spring_security_jwt.config.jwt;
+package com.example.todolist_spring_security.config.jwt;
 
-import com.example.spring_security_jwt.service.UserService;
+import com.example.todolist_spring_security.service.user.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,28 +25,27 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private UserService userService;
 
     @Autowired
-    JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+    JwtAuthenticationEntrypoint jwtAuthenticationEntrypoint;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
-            String token = getJwtFromHttpRequest(request);
-            if (token != null && jwtTokenProvider.validateToken(token)) {
-                String username = jwtTokenProvider.getUsernameFromUsername(token);
+            String token = request.getHeader("Authorization");
+            if(token != null && jwtTokenProvider.validateToken(token)) {
+                String username = jwtTokenProvider.getUsername(token);
                 UserDetails userDetails = userService.loadUserByUsername(username);
-
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
             filterChain.doFilter(request, response);
-        }catch (AuthenticationException e) {
-            jwtAuthenticationEntryPoint.commence(request, response, e);
+        }catch (AuthenticationException e){
+            jwtAuthenticationEntrypoint.commence(request, response, e);
         }
     }
 
-    private String getJwtFromHttpRequest(HttpServletRequest httpServletRequest) {
-        String bearerToken = httpServletRequest.getHeader("Authorization");
-        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
+    private String getJwtToken(HttpServletRequest request) {
+        String bearerToken = request.getHeader("Authorization");
+        if(bearerToken != null && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7);
         }
         return null;
