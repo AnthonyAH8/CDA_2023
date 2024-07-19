@@ -1,6 +1,7 @@
 package com.example.spring_security_jwt.config.security;
 
 import com.example.spring_security_jwt.config.jwt.JwtRequestFilter;
+import com.example.spring_security_jwt.filter.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,8 +29,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-//    @Autowired
-//    private AuthenticationConfiguration authenticationConfiguration;
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
@@ -39,6 +38,41 @@ public class SecurityConfig {
     @Bean
     public JwtRequestFilter jwtRequestFilter() {
         return new JwtRequestFilter();
+    }
+
+    @Bean
+    public EmailVerificationFilter emailVerificationFilter(){
+        return new EmailVerificationFilter();
+    }
+
+    @Bean
+    public LoginVerificationFilter loginVerificationFilter(){
+        return new LoginVerificationFilter();
+    }
+
+    @Bean
+    public RegisterVerificationFilter registerVerificationFilter(){
+        return new RegisterVerificationFilter();
+    }
+
+    @Bean
+    public PerformanceFilter performanceFilter(){
+        return new PerformanceFilter();
+    }
+
+    @Bean
+    public PostVerificationFilter postVerificationFilter(){
+        return new PostVerificationFilter();
+    }
+
+    @Bean
+    public UpdateVerificationFilter updateVerificationFilter(){
+        return new UpdateVerificationFilter();
+    }
+
+    @Bean
+    public DeleteVerificationFIlter deleteVerificationFIlter(){
+        return new DeleteVerificationFIlter();
     }
 
     @Bean
@@ -53,9 +87,17 @@ public class SecurityConfig {
                         .requestMatchers("/api/products/create").hasRole("ADMIN")
                         .requestMatchers("*").authenticated()
                 )
-                .addFilterBefore(jwtRequestFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtRequestFilter(), UsernamePasswordAuthenticationFilter.class).addFilterBefore(emailVerificationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(loginVerificationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(registerVerificationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new PerformanceFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(postVerificationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(updateVerificationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(deleteVerificationFIlter(), UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
     }
+
 
     @Bean
     public UrlBasedCorsConfigurationSource corsConfiguration() {
