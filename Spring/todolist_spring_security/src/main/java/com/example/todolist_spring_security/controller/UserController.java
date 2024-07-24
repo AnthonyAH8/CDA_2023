@@ -1,7 +1,7 @@
 package com.example.todolist_spring_security.controller;
 
 import com.example.todolist_spring_security.dto.BaseResponseDto;
-import com.example.todolist_spring_security.entity.Role;
+import com.example.todolist_spring_security.dto.UserLoginDto;
 import com.example.todolist_spring_security.entity.User;
 import com.example.todolist_spring_security.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,24 +23,24 @@ public class UserController {
     @PostMapping("/register")
     public BaseResponseDto register(@RequestBody User user) {
         if (userService.createUser(user)){
-            return new BaseResponseDto(true, "User registered successfully");
+            return new BaseResponseDto("User registered successfully", true);
         }else {
-            return new BaseResponseDto(false, "User could not be registered!");
+            return new BaseResponseDto( "User could not be registered!",false);
         }
     }
 
     @PostMapping("/login")
-    public BaseResponseDto login(@RequestBody User user, Role role) {
-        if (userService.checkUsername(user.getUsername())) {
-            if (userService.verifyUser(user.getUsername(), user.getPassword())) {
-                Map<String, Object> map = new HashMap<>();
-                map.put("token", userService.generateToken(user.getUsername(), user.getPassword(), role.getRolesEnum()));
-                return new BaseResponseDto("Success", map);
-            } else {
-                return new BaseResponseDto("Username or password is incorrect", false);
+    public BaseResponseDto login(@RequestBody UserLoginDto userLoginDto) {
+        if (userService.checkUsername(userLoginDto.getEmail())){
+            if (userService.verifyUser(userLoginDto.getEmail(), userLoginDto.getPassword())){
+                Map<String,Object> map = new HashMap<>();
+                map.put("token", userService.generateToken(userLoginDto.getEmail(), userLoginDto.getPassword()));
+                return new BaseResponseDto("User registered successfully", true);
+            }else {
+                return new BaseResponseDto( "User could not be registered!",false);
             }
         } else {
-            return new BaseResponseDto("Username or password is incorrect", false);
+            return new BaseResponseDto( "User could not be registered!",false);
         }
     }
 }

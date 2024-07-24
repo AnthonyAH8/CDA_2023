@@ -28,7 +28,7 @@ public class JwtTokenProvider {
         return Keys.hmacShaKeyFor(keybytes);
     }
 
-    public String generateToken(Authentication authentication, RolesEnum role){
+    public String generateToken(Authentication authentication){
         String username = authentication.getName();
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
@@ -40,7 +40,7 @@ public class JwtTokenProvider {
 
         String token = Jwts.builder()
                 .setSubject(username)
-                .claim(roles.toString(), role)
+                .claim("roles", roles)
                 .setIssuedAt(now)
                 .setExpiration(expiryDate)
                 .signWith(secretKey(), SignatureAlgorithm.HS512)

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/todo")
+@RequestMapping("/api/todos")
 public class TodoController {
 
     @Autowired
@@ -22,17 +22,17 @@ public class TodoController {
         return ResponseEntity.ok(todoService.findAll());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<TodoDtoGet> findById(@PathVariable Long id) {
         return ResponseEntity.ok(todoService.getById(id));
     }
 
-    @PostMapping("add")
+    @PostMapping("/add")
     public ResponseEntity<TodoDtoGet> create(@RequestBody TodoDtoPost todoDtoPost){
         return ResponseEntity.status(HttpStatus.CREATED).body(todoService.create(todoDtoPost));
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<TodoDtoGet> update(@PathVariable Long id, @RequestBody TodoDtoPost todoDtoPost){
         return ResponseEntity.ok(todoService.update(id, todoDtoPost));
     }

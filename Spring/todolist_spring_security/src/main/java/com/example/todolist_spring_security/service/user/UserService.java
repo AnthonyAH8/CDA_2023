@@ -48,10 +48,10 @@ public class UserService implements UserDetailsService {
         return userRepository.findByEmail(email).isPresent();
     }
 
-    public String generateToken(String email, String password, RolesEnum role) {
+    public String generateToken(String email, String password) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String token = jwtTokenProvider.generateToken(authentication, role);
+        String token = jwtTokenProvider.generateToken(authentication);
         return token;
     }
 

@@ -28,6 +28,8 @@ public class User implements UserDetails {
     @Column(unique = true, nullable = false)
     private String email;
 
+    private boolean isEnabled=true;
+
     @ManyToMany
     Set<Role> roles;
 
@@ -65,6 +67,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return isEnabled();
+        return isEnabled;
     }
 }
