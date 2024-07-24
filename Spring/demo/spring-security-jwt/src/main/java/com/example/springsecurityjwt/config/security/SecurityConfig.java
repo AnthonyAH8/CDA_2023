@@ -2,6 +2,7 @@ package com.example.springsecurityjwt.config.security;
 
 import com.example.springsecurityjwt.config.jwt.JwtRequestFilter;
 
+import com.example.springsecurityjwt.filter.EmailVerificationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -46,6 +47,11 @@ public class SecurityConfig {
 
 
     @Bean
+    public EmailVerificationFilter emailVerificationFilter(){
+        return new EmailVerificationFilter();
+    }
+
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
@@ -53,11 +59,12 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/products").hasAnyRole("USER","ADMIN")
-                        .requestMatchers("/api/products/admin/create").hasRole("ADMIN")
+                        .requestMatchers("/api/products/**").hasAnyRole("USER","ADMIN")
+                        .requestMatchers("/api/products/admin/**").hasRole("ADMIN")
                         .requestMatchers("*").authenticated()
                 )
                 .addFilterBefore(jwtRequestFilter(), UsernamePasswordAuthenticationFilter.class);
+                //.addFilterBefore(emailVerificationFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

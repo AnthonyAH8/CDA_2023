@@ -62,7 +62,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
         return path.startsWith("/api/auth");
     }
-    
+
 
 
 
