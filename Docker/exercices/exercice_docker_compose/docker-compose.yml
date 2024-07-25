@@ -1,0 +1,53 @@
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: employee_db
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks: 
+      - mysql_employee
+    ports:
+      - "3308:3306"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    depends_on:
+      - db
+    restart: always
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8082:80"
+
+  back_employee:
+    build:
+      context: ./back_employee
+      dockerfile: dockerfile
+    depends_on:
+      - db
+    networks:
+      - mysql_employee
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3308/employee
+    ports:
+      - "8080:8080"
+
+  front_employee:
+    build:
+      context: ./front_employee
+      dockerfile: dockerfile
+    depends_on:
+      - back_employee
+    networks:
+      - mysql_employee
+    ports:
+      - "3000:80"    
+
+volumes:
+  mysql_data:
+
+networks:
+  mysql_employee:

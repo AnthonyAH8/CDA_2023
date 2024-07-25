@@ -1,0 +1,25 @@
+FROM maven AS builder
+
+WORKDIR /app
+
+COPY pom.xml .
+
+RUN mvn dependency:go-offline
+
+COPY src ./src
+
+RUN mvn package -DskipTests
+
+FROM openjdk
+
+WORKDIR /app
+
+COPY --from=builder /app/target/01_spring_bases-0.0.1-SNAPSHOT.jar .
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "01_spring_bases-0.0.1-SNAPSHOT.jar"]
+
+# docker build -t spring_bases_docker .  
+
+# docker run -d -p 8080:8080 --name spring_bases spring_bases_docker
