@@ -9,5 +9,5 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 INSERT INTO users (name, email) VALUES
-('John Doe', 'john.doe@example.com'),
-('Jane Smith', 'jane.smith@example.com');
+('toto', 'toto@gmail.com'),
+('titi', 'titi@gmail.com');
