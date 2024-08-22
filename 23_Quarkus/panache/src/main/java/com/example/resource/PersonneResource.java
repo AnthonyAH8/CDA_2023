@@ -76,8 +76,8 @@ public class PersonneResource {
     @POST
     @Path("/addpersonne")
     public Response addPersonne(Personne personne) {
-        Personne savedPersonne = personneService.addPerson(personne);
-        return Response.status(Response.Status.CREATED).entity(savedPersonne).build();
+        Personne personne1 = new Personne(personne.getId(), personne.getNom(), personne.getPrenom(), personne.getAge());
+        return Response.ok(personne1).status(201).build();
     }
 }
 
