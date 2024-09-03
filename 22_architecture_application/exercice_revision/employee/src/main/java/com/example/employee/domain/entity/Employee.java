@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.employee.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,14 +10,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Builder
 @Data
-@NoArgsConstructor
+@Builder
 @AllArgsConstructor
-public class Review {
+@NoArgsConstructor
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String comment;
-    private double rating;
+    private int id;
+    private String firstname;
+    private String lastname;
+    private String email;
+
 }
